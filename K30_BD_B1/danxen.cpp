@@ -34,7 +34,6 @@ void magicFunc()
    }
    else
    {
-      d = a[1];
    }
    FOR(i, 2, n)
    {
