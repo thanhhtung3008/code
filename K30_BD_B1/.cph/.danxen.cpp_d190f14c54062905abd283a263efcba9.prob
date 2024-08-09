@@ -1,0 +1,1 @@
+{"name":"Local: danxen","url":"d:\\Code\\K30_BD_B1\\danxen.cpp","tests":[{"id":1722789347933,"input":"10\n-2 -1 5 1 -4 5 -6 -3 3 4\n2   1 2 2  1 2 1 1 2 2","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code\\K30_BD_B1\\danxen.cpp","group":"local","local":true}

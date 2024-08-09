@@ -1,0 +1,1 @@
+{"name":"Local: game","url":"d:\\Code\\K30_BD_B1\\game.cpp","tests":[{"id":1722786294633,"input":"5 5\n100\n1 7 5 10 2\n6 8 4 1 9\n9 6 0 7 14\n10 18 3 2 0\n5 0 6 11 10","output":"28\n148"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code\\K30_BD_B1\\game.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: 2019_v1_ngtopb","url":"e:\\DEHSGV1\\2019_v1_ngtopb.cpp","tests":[{"id":1722182105983,"input":"8 3\n25 30 28 154 6 12 70 13","output":"2 4 7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\DEHSGV1\\2019_v1_ngtopb.cpp","group":"local","local":true}

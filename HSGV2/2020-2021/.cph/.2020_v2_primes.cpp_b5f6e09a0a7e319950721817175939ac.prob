@@ -1,0 +1,1 @@
+{"name":"Local: 2020_v2_primes","url":"d:\\Code\\HSGV2\\2020-2021\\2020_v2_primes.cpp","tests":[{"id":1722581630696,"input":"2 \n10 10\n8 8","output":"792329\n7719"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code\\HSGV2\\2020-2021\\2020_v2_primes.cpp","group":"local","local":true}

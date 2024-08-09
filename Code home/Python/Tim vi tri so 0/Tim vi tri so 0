@@ -1,0 +1,10 @@
+# Nhập list a gồm các số nguyên từ bàn phím
+a = list(map(int, input().split()))
+pos = []
+for i in range(len(a)):
+    if a[i] == 0:
+        pos.append(i)
+if pos:
+    print(*pos)
+else:
+    print(None)

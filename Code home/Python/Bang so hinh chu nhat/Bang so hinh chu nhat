@@ -1,0 +1,5 @@
+print("Nhap m, n, p")
+m, n, p = map(int, input().split())
+for i in range(m):
+    for j in range(n):
+        print(p + j, end=" ")

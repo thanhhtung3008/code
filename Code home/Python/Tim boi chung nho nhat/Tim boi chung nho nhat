@@ -1,0 +1,18 @@
+a, b = map(int, input().split())
+
+
+def lcm(a, b):
+    if a > b:
+        boi = a
+    else:
+        boi = b
+
+    while True:
+        if boi % a == 0 and boi % b == 0:
+            lcm = boi
+            break
+        boi += 1
+    return lcm
+
+
+print(lcm(a, b))

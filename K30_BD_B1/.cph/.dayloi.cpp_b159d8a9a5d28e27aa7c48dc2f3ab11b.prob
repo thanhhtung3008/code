@@ -1,0 +1,1 @@
+{"name":"Local: dayloi","url":"d:\\Code\\K30_BD_B1\\dayloi.cpp","tests":[{"id":1722784646866,"input":"11\n10\n5\n8\n4\n2\n-1\n4\n6\n8\n6\n12\n","output":"9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Code\\K30_BD_B1\\dayloi.cpp","group":"local","local":true}
