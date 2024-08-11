@@ -35,27 +35,29 @@ void OJ()
 #endif
 }
 
-ll n, L;
+ll n;
+unordered_map<ll, ll> m;
 void magicFunc()
 {
-   cin >> n >> L;
-   vll p;
-   FOR(i, 0, n - 1)
+   cin >> n;
+   ll x;
+   FOR(i, 1, n * n)
    {
-      ll x;
       cin >> x;
-      p.push_back(x);
+      m[x]++;
+   }
+   vector<ll> p;
+   for (auto i : m)
+   {
+      p.push_back(i.sc * i.ft);
    }
    sort(p.begin(), p.end());
-   ll ans = 0;
-   FOR(i, 0, n - 2)
+   ll s = 0;
+   FOR(i, 1, m.size() - 1)
    {
-      ll k = p[i];
-      auto l = lower_bound(p.begin() + 1 + i, p.end(), k + L);
-      auto h = upper_bound(p.begin() + 1 + i, p.end(), k + L);
-      ans += distance(l, h);
+      s += p[i];
    }
-   cout << ans;
+   cout << s;
 }
 
 int main()

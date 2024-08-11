@@ -34,28 +34,21 @@ void OJ()
 #ifndef ONLINE_JUDGE
 #endif
 }
-
-ll n, L;
+ll n, a[30002], dp[30002];
 void magicFunc()
 {
-   cin >> n >> L;
-   vll p;
-   FOR(i, 0, n - 1)
+   cin >> n;
+   FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      p.push_back(x);
+      cin >> a[i];
+      dp[i] = dp[i - 1] + a[i];
    }
-   sort(p.begin(), p.end());
-   ll ans = 0;
-   FOR(i, 0, n - 2)
+   ll s = 0;
+   FOR(i, 1, n)
    {
-      ll k = p[i];
-      auto l = lower_bound(p.begin() + 1 + i, p.end(), k + L);
-      auto h = upper_bound(p.begin() + 1 + i, p.end(), k + L);
-      ans += distance(l, h);
+      s += (a[i] * dp[i - 1]);
    }
-   cout << ans;
+   cout << s;
 }
 
 int main()

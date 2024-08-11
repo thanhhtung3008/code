@@ -1,0 +1,1 @@
+{"name":"Local: Cau1","url":"d:\\code\\ThanhHoa2324\\Cau1.cpp","tests":[{"id":1723345244412,"input":"202?","output":"5"},{"id":1723345256719,"input":"?7","output":"7"},{"id":1723345271787,"input":"800000?","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\ThanhHoa2324\\Cau1.cpp","group":"local","local":true}

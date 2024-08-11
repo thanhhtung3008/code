@@ -35,27 +35,40 @@ void OJ()
 #endif
 }
 
-ll n, L;
+string s;
+ll tinh(string s)
+{
+   ll kq = 0;
+   FOR(i, 0, s.size() - 1)
+   {
+      kq += ((s[i] - 48) * (i + 1));
+   }
+   return kq;
+}
 void magicFunc()
 {
-   cin >> n >> L;
-   vll p;
-   FOR(i, 0, n - 1)
+   cin >> s;
+   ll pos = s.find('?');
+   bool check = false;
+   for (char c = '0'; c <= '9'; ++c)
    {
-      ll x;
-      cin >> x;
-      p.push_back(x);
+      if (pos == 0 && c == '0')
+      {
+         continue;
+      }
+      s[pos] = c;
+      ll kq = tinh(s);
+      if (kq % 7 == 0)
+      {
+         cout << c;
+         check = true;
+         break;
+      }
    }
-   sort(p.begin(), p.end());
-   ll ans = 0;
-   FOR(i, 0, n - 2)
+   if (!check)
    {
-      ll k = p[i];
-      auto l = lower_bound(p.begin() + 1 + i, p.end(), k + L);
-      auto h = upper_bound(p.begin() + 1 + i, p.end(), k + L);
-      ans += distance(l, h);
+      cout << -1;
    }
-   cout << ans;
 }
 
 int main()

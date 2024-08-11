@@ -35,27 +35,64 @@ void OJ()
 #endif
 }
 
-ll n, L;
+string cong(string a, string b)
+{
+   string s = "";
+   while (a.size() < b.size())
+   {
+      a = "0" + a;
+   }
+   while (b.size() < a.size())
+   {
+      b = "0" + b;
+   }
+   ll nho = 0;
+   FORD(i, b.size() - 1, 0)
+   {
+      ll v1 = a[i] - 48;
+      ll v2 = b[i] - 48;
+      ll k = v1 + v2 + nho;
+      s = char((k % 10) + 48) + s;
+      nho = k / 10;
+   }
+   if (nho != 0)
+   {
+      s = char(nho + 48) + s;
+   }
+   return s;
+}
+string nhan1(string a, char b)
+{
+}
+bool check(ll n)
+{
+   ll s = n % 10;
+   while (n)
+   {
+      if (n % 10 != s)
+      {
+         return false;
+      }
+      n /= 10;
+   }
+   return true;
+}
 void magicFunc()
 {
-   cin >> n >> L;
-   vll p;
-   FOR(i, 0, n - 1)
+   ll k;
+   cin >> k;
+   ll m = 1, cur = 1;
+   while (true)
    {
-      ll x;
-      cin >> x;
-      p.push_back(x);
+      ll s = k * m;
+      if (check(s))
+      {
+         cout << cur;
+         break;
+      }
+      m++;
+      cur = (cur + 1) % MOD;
    }
-   sort(p.begin(), p.end());
-   ll ans = 0;
-   FOR(i, 0, n - 2)
-   {
-      ll k = p[i];
-      auto l = lower_bound(p.begin() + 1 + i, p.end(), k + L);
-      auto h = upper_bound(p.begin() + 1 + i, p.end(), k + L);
-      ans += distance(l, h);
-   }
-   cout << ans;
 }
 
 int main()
