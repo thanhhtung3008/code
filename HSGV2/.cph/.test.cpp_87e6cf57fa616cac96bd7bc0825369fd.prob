@@ -1,0 +1,1 @@
+{"name":"Local: test","url":"d:\\code\\HSGV2\\test.cpp","tests":[{"id":1723481110182,"input":"6 2\n1 3 10 2 1 4","output":"12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\HSGV2\\test.cpp","group":"local","local":true}

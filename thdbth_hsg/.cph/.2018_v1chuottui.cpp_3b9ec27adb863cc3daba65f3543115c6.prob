@@ -1,0 +1,1 @@
+{"name":"Local: 2018_v1chuottui","url":"d:\\code\\thdbth_hsg\\2018_v1chuottui.cpp","tests":[{"id":1723482257576,"input":"10\n72\n78\n41\n90\n28\n43\n13\n12\n59\n12","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdbth_hsg\\2018_v1chuottui.cpp","group":"local","local":true}
