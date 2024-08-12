@@ -1,0 +1,1 @@
+{"name":"Local: 2014_v1tichnn","url":"d:\\code\\thdbth_hsg\\2014_v1tichnn.cpp","tests":[{"id":1723447339558,"input":"9\n3 5 1 7 9 0 9 -3 10","output":"-270"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdbth_hsg\\2014_v1tichnn.cpp","group":"local","local":true}

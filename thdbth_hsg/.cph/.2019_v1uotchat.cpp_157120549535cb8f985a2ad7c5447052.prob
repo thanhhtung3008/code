@@ -1,0 +1,1 @@
+{"name":"Local: 2019_v1uotchat","url":"d:\\code\\thdbth_hsg\\2019_v1uotchat.cpp","tests":[{"id":1723450358854,"input":"6 1","output":"4"},{"id":1723450366719,"input":"20 2","output":"9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdbth_hsg\\2019_v1uotchat.cpp","group":"local","local":true}

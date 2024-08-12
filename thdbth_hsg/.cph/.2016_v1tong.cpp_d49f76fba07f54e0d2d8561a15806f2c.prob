@@ -1,0 +1,1 @@
+{"name":"Local: 2016_v1tong","url":"d:\\code\\thdbth_hsg\\2016_v1tong.cpp","tests":[{"id":1723448640922,"input":"5 7 6\n4\n3\n2\n8\n9","output":"33"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdbth_hsg\\2016_v1tong.cpp","group":"local","local":true}

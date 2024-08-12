@@ -1,0 +1,1 @@
+{"name":"Local: 2014_v1demso","url":"d:\\code\\thdbth_hsg\\2014_v1demso.cpp","tests":[{"id":1723446182832,"input":"10\n3 3 8 9 5 10 10 9 1 5","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdbth_hsg\\2014_v1demso.cpp","group":"local","local":true}
