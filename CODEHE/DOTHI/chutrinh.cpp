@@ -41,7 +41,7 @@ bool dfs(ll u)
       if (!visited[i])
       {
          par[i] = u;
-         if (dfs1(i))
+         if (dfs(i))
          {
             return true;
          }
@@ -59,7 +59,7 @@ bool bfs(ll u)
 {
    visited[u] = true;
    queue<ll> q;
-   p.push(u);
+   q.push(u);
    while (!q.empty())
    {
       ll v = q.front();
@@ -87,7 +87,7 @@ void magicFunc()
    {
       if (!visited[i])
       {
-         if (dfs1(i))
+         if (dfs(i))
          {
             cout << "YES\n";
             vector<ll> path;

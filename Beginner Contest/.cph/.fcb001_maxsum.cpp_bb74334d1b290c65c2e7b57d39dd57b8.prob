@@ -1,0 +1,1 @@
+{"name":"Local: fcb001_maxsum","url":"d:\\code\\Beginner Contest\\fcb001_maxsum.cpp","tests":[{"id":1723609690744,"input":"3\n1 -3 3","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\Beginner Contest\\fcb001_maxsum.cpp","group":"local","local":true}

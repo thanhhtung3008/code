@@ -1,0 +1,1 @@
+{"name":"Local: sqrtx","url":"d:\\code\\BinarySearch\\sqrtx.cpp","tests":[{"id":1723556459600,"input":"50","output":"7"},{"id":1723556463858,"input":"10","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\BinarySearch\\sqrtx.cpp","group":"local","local":true}

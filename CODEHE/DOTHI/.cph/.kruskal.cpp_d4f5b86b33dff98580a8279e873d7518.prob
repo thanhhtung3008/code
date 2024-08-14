@@ -1,0 +1,1 @@
+{"name":"Local: kruskal","url":"d:\\code\\CODEHE\\DOTHI\\kruskal.cpp","tests":[{"id":1723534889754,"input":"6 9\n1 2 12\n1 3 4\n2 3 1\n2 4 5\n2 5 3\n3 5 2\n4 5 3\n4 6 10\n5 6 8","output":"MST: 18\n2 3 1\n3 5 2\n4 5 3\n1 3 4\n5 6 8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\CODEHE\\DOTHI\\kruskal.cpp","group":"local","local":true}
