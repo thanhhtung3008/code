@@ -1,0 +1,1 @@
+{"name":"Local: TKNP5","url":"d:\\code\\BinarySearch\\TKNP5.cpp","tests":[{"id":1723646093102,"input":"5\n1 1 1 0 0 ","output":"3"},{"id":1723646105842,"input":"3\n1 1 1\n","output":"3"},{"id":1723646116528,"input":"4\n0 0 0 0\n","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\BinarySearch\\TKNP5.cpp","group":"local","local":true}
