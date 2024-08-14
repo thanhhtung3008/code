@@ -78,7 +78,7 @@ void solve()
       cin >> n;
       vll p(n);
       FOR(i, 0, n - 1)
-      {                                                        
+      {
          cin >> p[i];
       }
       ll x;
