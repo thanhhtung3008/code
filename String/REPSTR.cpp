@@ -25,27 +25,19 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll p(n + 1);
-   FOR(i, 1, n)
+   string a, b;
+   cin >> a >> b;
+   sort(b.begin(), b.end(), greater<char>());
+   ll idx = 0;
+   for (ll i = 0; i < a.size() && idx < b.size(); i++)
    {
-      ll x;
-      cin >> x;
-      p[i] = x + p[i - 1];
-   }
-   ll m;
-   cin >> m;
-   FOR(i, 1, m)
-   {
-      ll x;
-      cin >> x;
-      auto pos = lower_bound(p.begin() + 1, p.end(), x);
-      if (pos != p.end())
+      if (a[i] < b[idx])
       {
-         cout << pos - p.begin() << " ";
+         a[i] = b[idx];
+         idx++;
       }
    }
+   cout << a;
 }
 
 int main()

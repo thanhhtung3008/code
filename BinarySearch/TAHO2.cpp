@@ -22,29 +22,37 @@ const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
 #define TASK "code"
-
+void try1(ll dem, ll s, ll p, vll a, ll cursum, ll curdem, ll &ans)
+{
+   if (cursum == s)
+   {
+      ans = min(ans, curdem * p);
+   }
+   if (cursum > s || dem > a.size())
+   {
+      return;
+   }
+   try1(dem + 1, s, p, a, cursum, curdem, ans);
+   try1(dem + 1, s, p, a, cursum + a[dem], curdem + 1, ans);
+}
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll p(n + 1);
+   ll n, s, p;
+   cin >> n >> s >> p;
+   vll a(n + 1);
    FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      p[i] = x + p[i - 1];
+      cin >> a[i];
    }
-   ll m;
-   cin >> m;
-   FOR(i, 1, m)
+   ll ans = INT_MAX;
+   try1(1, s, p, a, 0, 0, ans);
+   if (ans == INT_MAX)
    {
-      ll x;
-      cin >> x;
-      auto pos = lower_bound(p.begin() + 1, p.end(), x);
-      if (pos != p.end())
-      {
-         cout << pos - p.begin() << " ";
-      }
+      cout << -1;
+   }
+   else
+   {
+      cout << ans;
    }
 }
 

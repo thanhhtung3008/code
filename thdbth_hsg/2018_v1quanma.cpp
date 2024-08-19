@@ -25,27 +25,30 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll p(n + 1);
+   ll n, m;
+   cin >> n >> m;
+   ll a[n + 2][m + 2];
+   ll dp[n + 2][m + 2];
+   memset(dp, 0, sizeof(dp));
    FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      p[i] = x + p[i - 1];
-   }
-   ll m;
-   cin >> m;
-   FOR(i, 1, m)
-   {
-      ll x;
-      cin >> x;
-      auto pos = lower_bound(p.begin() + 1, p.end(), x);
-      if (pos != p.end())
+      FOR(j, 1, m)
       {
-         cout << pos - p.begin() << " ";
+         cin >> a[i][j];
       }
    }
+   FOR(i, 1, m)
+   {
+      dp[1][i] = a[1][i];
+   }
+   FOR(i, 2, n)
+   {
+      FOR(j, 1, m)
+      {
+         dp[i][j] = a[i][j] + max({dp[i - 1][j - 2], dp[i - 1][j + 2], dp[i - 2][j - 1], dp[i - 2][j + 1]});
+      }
+   }
+   cout << *max_element(dp[n] + 1, dp[n] + m + 1);
 }
 
 int main()

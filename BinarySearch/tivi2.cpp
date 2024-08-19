@@ -23,29 +23,54 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool cmp(pll a, pll b)
+{
+   return a.ft < b.ft;
+}
+
+ll tknp(vp p, ll l, ll r, ll x)
+{
+   ll ans = -1;
+   while (l <= r)
+   {
+      ll m = (l + r) / 2;
+      if (p[m].ft >= x)
+      {
+         r = m - 1;
+      }
+      else
+      {
+         ans = m;
+         l = m + 1;
+      }
+   }
+   return ans;
+}
+
 void solve()
 {
    ll n;
    cin >> n;
-   vll p(n + 1);
-   FOR(i, 1, n)
+   vp p;
+   FOR(i, 0, n - 1)
    {
-      ll x;
-      cin >> x;
-      p[i] = x + p[i - 1];
+      ll x, y;
+      cin >> x >> y;
+      p.push_back({x, y});
    }
-   ll m;
-   cin >> m;
-   FOR(i, 1, m)
+   ll ans = 0;
+   sort(p.begin(), p.end(), cmp);
+   FOR(i, 0, n - 1)
    {
-      ll x;
-      cin >> x;
-      auto pos = lower_bound(p.begin() + 1, p.end(), x);
-      if (pos != p.end())
+      ll b = p[i].sc;
+      ll pos = tknp(p, 1, n - 1, b);
+      if (pos != -1)
       {
-         cout << pos - p.begin() << " ";
+         // cout << pos << " " << i << endl;
+         ans += (pos - i);
       }
    }
+   cout << ans;
 }
 
 int main()

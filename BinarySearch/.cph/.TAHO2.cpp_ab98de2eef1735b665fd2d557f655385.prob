@@ -1,0 +1,1 @@
+{"name":"Local: TAHO2","url":"d:\\code\\BinarySearch\\TAHO2.cpp","tests":[{"id":1723819385476,"input":"10 390 2\n200 10 20 20 50 50 50 50 100 100","output":"10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\BinarySearch\\TAHO2.cpp","group":"local","local":true}

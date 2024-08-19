@@ -23,29 +23,38 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
-void solve()
+void chuanhoa(string &a, string &b)
 {
-   ll n;
-   cin >> n;
-   vll p(n + 1);
-   FOR(i, 1, n)
+   FOR(i, 0, a.size() - 1)
    {
-      ll x;
-      cin >> x;
-      p[i] = x + p[i - 1];
-   }
-   ll m;
-   cin >> m;
-   FOR(i, 1, m)
-   {
-      ll x;
-      cin >> x;
-      auto pos = lower_bound(p.begin() + 1, p.end(), x);
-      if (pos != p.end())
+      if (a[i] >= 'A' && a[i] <= 'Z')
       {
-         cout << pos - p.begin() << " ";
+         a[i] = char(a[i] + 32);
       }
    }
+   FOR(i, 0, b.size() - 1)
+   {
+      if (b[i] >= 'A' && b[i] <= 'Z')
+      {
+         b[i] = char(b[i] + 32);
+      }
+   }
+}
+
+void solve()
+{
+   string a, b;
+   cin >> a >> b;
+   chuanhoa(a, b);
+   ll pos = 0;
+   FOR(i, 1, min(a.size(), b.size()))
+   {
+      if (a.substr(a.size() - i, i) == b.substr(0, i))
+      {
+         pos = i;
+      }
+   }
+   cout << a.size() + b.size() - pos;
 }
 
 int main()

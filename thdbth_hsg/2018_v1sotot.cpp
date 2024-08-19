@@ -23,29 +23,33 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll tcs(ll a)
+{
+   ll s = 0;
+   while (a)
+   {
+      s += (a % 10);
+      a /= 10;
+   }
+   return s;
+}
+
 void solve()
 {
    ll n;
    cin >> n;
-   vll p(n + 1);
+   ll ans = 0;
    FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      p[i] = x + p[i - 1];
-   }
-   ll m;
-   cin >> m;
-   FOR(i, 1, m)
-   {
-      ll x;
-      cin >> x;
-      auto pos = lower_bound(p.begin() + 1, p.end(), x);
-      if (pos != p.end())
+      if (n % i == 0)
       {
-         cout << pos - p.begin() << " ";
+         if (tcs(i) > tcs(ans))
+         {
+            ans = i;
+         }
       }
    }
+   cout << ans;
 }
 
 int main()

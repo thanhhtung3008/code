@@ -25,26 +25,26 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll p(n + 1);
-   FOR(i, 1, n)
+   string s;
+   cin >> s;
+   bool check = false;
+   FOR(i, 0, s.size() - 1)
    {
-      ll x;
-      cin >> x;
-      p[i] = x + p[i - 1];
-   }
-   ll m;
-   cin >> m;
-   FOR(i, 1, m)
-   {
-      ll x;
-      cin >> x;
-      auto pos = lower_bound(p.begin() + 1, p.end(), x);
-      if (pos != p.end())
+      if (s[i] == '0')
       {
-         cout << pos - p.begin() << " ";
+         check = true;
+         s.erase(i, 1);
+         break;
       }
+   }
+   if (check)
+   {
+      cout << s;
+   }
+   else
+   {
+      s.erase(0, 1);
+      cout << s;
    }
 }
 

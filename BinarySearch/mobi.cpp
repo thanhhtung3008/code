@@ -25,27 +25,29 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll p(n + 1);
+   ll n, k;
+   cin >> n >> k;
+   ll ans = 0;
+   vll p(maxn);
+   vll vt(maxn);
    FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      p[i] = x + p[i - 1];
+      ll x, y;
+      cin >> x >> y;
+      p[x] = y;
+      ans = max(ans, x);
    }
-   ll m;
-   cin >> m;
-   FOR(i, 1, m)
+   ll s = 0, kq = 0;
+   FOR(i, 0, ans)
    {
-      ll x;
-      cin >> x;
-      auto pos = lower_bound(p.begin() + 1, p.end(), x);
-      if (pos != p.end())
+      s += p[i];
+      if (i > 2 * k)
       {
-         cout << pos - p.begin() << " ";
+         s -= p[i - 2 * k - 1];
       }
+      kq = max(kq, s);
    }
+   cout << kq;
 }
 
 int main()
