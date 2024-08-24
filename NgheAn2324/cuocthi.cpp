@@ -23,12 +23,32 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+void solve()
+{
+   ll n, q;
+   cin >> n >> q;
+   vll p(n + 1);
+   FOR(i, 1, n)
+   {
+      cin >> p[i];
+   }
+   sort(p.begin(), p.end());
+   while (q--)
+   {
+      ll a, b;
+      cin >> a >> b;
+      auto s = lower_bound(p.begin(), p.end(), a);
+      auto e = upper_bound(p.begin(), p.end(), b);
+      cout << distance(s, e) << endl;
+   }
+}
+
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
-
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
+   solve();
    return 0;
 }
 /// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

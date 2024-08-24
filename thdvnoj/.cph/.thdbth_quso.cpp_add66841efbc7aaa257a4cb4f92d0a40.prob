@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_quso","url":"d:\\code\\thdvnoj\\thdbth_quso.cpp","tests":[{"id":1724430626181,"input":"9 40 8 ","output":"24"},{"id":1724430631328,"input":"105 80 10","output":"100"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_quso.cpp","group":"local","local":true}

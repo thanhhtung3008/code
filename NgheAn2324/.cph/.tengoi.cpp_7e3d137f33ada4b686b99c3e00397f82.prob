@@ -1,0 +1,1 @@
+{"name":"Local: tengoi","url":"d:\\code\\NgheAn2324\\tengoi.cpp","tests":[{"id":1724340619855,"input":"3\nABRBCDAB\nLCKHABWCHTHUR\nABCKHTTWE","output":"5 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\NgheAn2324\\tengoi.cpp","group":"local","local":true}

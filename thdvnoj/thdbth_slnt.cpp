@@ -23,12 +23,46 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool check[maxn];
+
+void snt()
+{
+   memset(check, true, sizeof(check));
+   check[0] = check[1] = false;
+   FOR(i, 2, sqrt(maxn))
+   {
+      for (ll j = i * i; j <= maxn; j += i)
+      {
+         check[j] = false;
+      }
+   }
+}
+
+ll dp[maxn];
+
+void ktao()
+{
+   snt();
+   FOR(i, 1, maxn)
+   {
+      dp[i] = dp[i - 1] + check[i];
+   }
+}
+
+void solve()
+{
+   ll n;
+   cin >> n;
+   ktao();
+   cout << dp[n];
+}
+
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
-
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
+   solve();
    return 0;
 }
 /// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

@@ -1,0 +1,1 @@
+{"name":"Local: B4","url":"d:\\code\\HSGQuangNam\\2020-2021\\B4.cpp","tests":[{"id":1724254788006,"input":"2\n01010","output":"4"},{"id":1724254791279,"input":"2\n1111\n","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\HSGQuangNam\\2020-2021\\B4.cpp","group":"local","local":true}

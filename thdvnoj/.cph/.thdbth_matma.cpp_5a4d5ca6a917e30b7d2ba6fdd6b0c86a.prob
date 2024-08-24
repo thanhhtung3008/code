@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_matma","url":"d:\\code\\thdvnoj\\thdbth_matma.cpp","tests":[{"id":1724428401087,"input":"A12b1c 7 5 12am7n 77z 345","output":"8 12 2"},{"id":1724428421527,"input":"Tin hoc tre Binh Thuan","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_matma.cpp","group":"local","local":true}

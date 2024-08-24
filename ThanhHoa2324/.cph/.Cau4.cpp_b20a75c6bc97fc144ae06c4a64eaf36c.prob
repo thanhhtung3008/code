@@ -1,0 +1,1 @@
+{"name":"Local: Cau4","url":"d:\\code\\ThanhHoa2324\\Cau4.cpp","tests":[{"id":1724404773185,"input":"2 3 5\n1 2 1\n3 4 4","output":"5"},{"id":1724404866588,"input":"5 2 2\n1 2\n1 2\n1 2\n1 2\n-2 -2","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\ThanhHoa2324\\Cau4.cpp","group":"local","local":true}

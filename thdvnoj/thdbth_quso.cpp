@@ -23,12 +23,34 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+void solve()
+{
+   ll n, x, y;
+   cin >> n >> x >> y;
+   ll ans = INT_MAX;
+   FOR(i, 0, (n + 99) / 100)
+   {
+      ll k = n - i * 100;
+      if (k < 0)
+      {
+         k = 0;
+      }
+      ll v = (k + 3) / 4;
+      ll cost = i * x + v * y;
+      if (cost < ans)
+      {
+         ans = cost;
+      }
+   }
+   cout << ans;
+}
+
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
-
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
+   solve();
    return 0;
 }
 /// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

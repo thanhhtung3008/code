@@ -23,12 +23,43 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+void solve()
+{
+   ll n;
+   cin >> n;
+   vll a(n + 1);
+   FOR(i, 0, n - 1)
+   {
+      cin >> a[i];
+   }
+   unordered_map<ll, ll> m;
+   ll s = 0;
+   ll l = 0;
+   FOR(i, 0, n - 1)
+   {
+      s += a[i];
+      if (s == 0)
+      {
+         l = i + 1;
+      }
+      else if (m.find(s) == m.end())
+      {
+         m[s] = i;
+      }
+      else if (m.find(s) != m.end())
+      {
+         l = max(i - m[s], l);
+      }
+   }
+   cout << l;
+}
+
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
-
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
+   solve();
    return 0;
 }
 /// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

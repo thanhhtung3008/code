@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_spnum","url":"d:\\code\\thdvnoj\\thdbth_spnum.cpp","tests":[{"id":1724428082675,"input":"6","output":"1"},{"id":1724428086987,"input":"125","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_spnum.cpp","group":"local","local":true}

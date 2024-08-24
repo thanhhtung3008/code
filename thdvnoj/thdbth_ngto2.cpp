@@ -23,12 +23,53 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool check[maxn];
+
+void snt()
+{
+   memset(check, true, sizeof(check));
+   check[0] = check[1] = false;
+   FOR(i, 2, sqrt(maxn))
+   {
+      for (ll j = i * i; j <= maxn; j += i)
+      {
+         check[j] = false;
+      }
+   }
+}
+
+void solve()
+{
+   snt();
+   ll n;
+   cin >> n;
+   ll i = 2;
+   ll s = 0;
+   ll dem = 0;
+   FOR(i, 2, n)
+   {
+      if (check[i])
+      {
+         s = s + i;
+         if (s <= n)
+         {
+            dem++;
+         }
+         else
+         {
+            break;
+         }
+      }
+   }
+   cout << dem;
+}
+
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
-
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
+   solve();
    return 0;
 }
 /// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine
