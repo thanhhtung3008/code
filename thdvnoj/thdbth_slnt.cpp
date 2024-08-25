@@ -31,9 +31,12 @@ void snt()
    check[0] = check[1] = false;
    FOR(i, 2, sqrt(maxn))
    {
-      for (ll j = i * i; j <= maxn; j += i)
+      if (check[i])
       {
-         check[j] = false;
+         for (ll j = i * i; j <= maxn; j += i)
+         {
+            check[j] = false;
+         }
       }
    }
 }

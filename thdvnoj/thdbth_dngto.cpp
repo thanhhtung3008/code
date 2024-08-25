@@ -23,48 +23,40 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
-bool check[maxn];
-
-void snt()
+ll tinh(ll l, ll r)
 {
-   memset(check, true, sizeof(check));
-   check[0] = check[1] = false;
-   FOR(i, 2, sqrt(maxn))
+   vector<bool> nt(r - l + 1, true);
+   FOR(i, 2, sqrt(r))
    {
-      if (check[i])
+      ll bd = max(i * i, (i + l - 1) / i * i);
+      for (ll j = bd; j <= r; j += i)
       {
-         for (ll j = i * i; j <= maxn; j += i)
-         {
-            check[j] = false;
-         }
+         nt[j - l] = false;
       }
    }
+   if (1 >= l)
+      nt[1 - l] = false;
+   ll dem = 0;
+   FOR(i, l, r)
+   {
+      if (nt[i - l])
+      {
+         dem++;
+      }
+   }
+   return dem;
 }
 
 void solve()
 {
-   snt();
-   ll n;
-   cin >> n;
-   ll i = 2;
-   ll s = 0;
-   ll dem = 0;
-   FOR(i, 2, n)
+   ll q;
+   cin >> q;
+   while (q--)
    {
-      if (check[i])
-      {
-         s = s + i;
-         if (s <= n)
-         {
-            dem++;
-         }
-         else
-         {
-            break;
-         }
-      }
+      ll l, r;
+      cin >> l >> r;
+      cout << tinh(l, r) << endl;
    }
-   cout << dem;
 }
 
 int main()

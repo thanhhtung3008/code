@@ -23,48 +23,46 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
-bool check[maxn];
-
-void snt()
-{
-   memset(check, true, sizeof(check));
-   check[0] = check[1] = false;
-   FOR(i, 2, sqrt(maxn))
-   {
-      if (check[i])
-      {
-         for (ll j = i * i; j <= maxn; j += i)
-         {
-            check[j] = false;
-         }
-      }
-   }
-}
-
 void solve()
 {
-   snt();
-   ll n;
-   cin >> n;
-   ll i = 2;
-   ll s = 0;
-   ll dem = 0;
-   FOR(i, 2, n)
+   ll n, k;
+   cin >> n >> k;
+   vll dp(n + 1);
+   FOR(i, 1, n)
    {
-      if (check[i])
+      ll x;
+      cin >> x;
+      dp[i] = dp[i - 1] + x;
+   }
+   unordered_map<ll, ll> m;
+   m[0] = 0;
+   ll pos = -1;
+   ll l = 0;
+   FOR(i, 1, n)
+   {
+      ll t = dp[i] - i * k;
+      if (m.find(t) != m.end())
       {
-         s = s + i;
-         if (s <= n)
+         ll ln = i - m[t];
+         if (ln > l)
          {
-            dem++;
-         }
-         else
-         {
-            break;
+            l = ln;
+            pos = m[t] + 1;
          }
       }
+      else
+      {
+         m[t] = i;
+      }
    }
-   cout << dem;
+   if (l > 0)
+   {
+      cout << l << " " << pos;
+   }
+   else
+   {
+      cout << 0;
+   }
 }
 
 int main()

@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_dngto","url":"d:\\code\\thdvnoj\\thdbth_dngto.cpp","tests":[{"id":1724510135922,"input":"2\n1 50\n10000000 10000050","output":"15\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_dngto.cpp","group":"local","local":true}

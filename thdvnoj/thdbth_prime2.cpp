@@ -41,30 +41,38 @@ void snt()
    }
 }
 
+bool ck(ll n)
+{
+   ll s = 0;
+   while (n)
+   {
+      s += n % 10;
+      n /= 10;
+   }
+   if (check[s])
+   {
+      return true;
+   }
+   return false;
+}
+
 void solve()
 {
    snt();
    ll n;
    cin >> n;
-   ll i = 2;
-   ll s = 0;
    ll dem = 0;
-   FOR(i, 2, n)
+   ll num = 0;
+   while (dem < n)
    {
-      if (check[i])
+      num++;
+      if (check[num] && ck(num))
       {
-         s = s + i;
-         if (s <= n)
-         {
-            dem++;
-         }
-         else
-         {
-            break;
-         }
+         // cout << num << endl;
+         dem++;
       }
    }
-   cout << dem;
+   cout << num;
 }
 
 int main()
