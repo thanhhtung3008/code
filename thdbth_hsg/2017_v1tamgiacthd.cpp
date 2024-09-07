@@ -23,26 +23,32 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll tinh(ll x1, ll y1, ll x2, ll y2)
+{
+   return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+}
+
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll ans = INT_MAX;
-   FOR(i, 0, (n + 99) / 100)
+   ll x1, x2, x3, y1, y2, y3;
+   cin >> x1 >> y1;
+   cin >> x2 >> y2;
+   cin >> x3 >> y3;
+   ll AB2 = tinh(x1, y1, x2, y2);
+   ll AC2 = tinh(x1, y1, x3, y3);
+   ll BC2 = tinh(x2, y2, x3, y3);
+   if (sqrt(AB2) + sqrt(AC2) <= sqrt(BC2) || sqrt(AB2) + sqrt(BC2) <= sqrt(AC2) || sqrt(AC2) + sqrt(BC2) <= sqrt(AB2))
    {
-      ll k = n - i * 100;
-      if (k < 0)
-      {
-         k = 0;
-      }
-      ll v = (k + 3) / 4;
-      ll cost = i * x + v * y;
-      if (cost < ans)
-      {
-         ans = cost;
-      }
+      cout << "khong la tam giac";
    }
-   cout << ans;
+   else if (AB2 + BC2 == AC2 || AB2 + AC2 == BC2 || AC2 + BC2 == AB2)
+   {
+      cout << "vuong";
+   }
+   else if (AB2 == AC2 || AB2 == BC2 || AC2 == BC2)
+   {
+      cout << "can";
+   }
 }
 
 int main()
