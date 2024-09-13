@@ -27,10 +27,10 @@ void magicFunc()
     sort(a + 1, a + n + 1);
     FOR(i, 1, n)
     {
-        res += upper_bound(a + i + 1, a + n + 1, s - a[i]) - lower_bound(a + i + 1, a + n + 1, s - a[i]);
+        ans += upper_bound(a + i + 1, a + n + 1, s - a[i]) - lower_bound(a + i + 1, a + n + 1, s - a[i]);
     }
-    if (res != 0)
-        cout << res;
+    if (ans != 0)
+        cout << ans;
     else
         cout << 0;
 }

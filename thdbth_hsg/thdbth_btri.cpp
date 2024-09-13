@@ -27,17 +27,28 @@ void solve()
 {
    ll n;
    cin >> n;
-   vll a(n + 1);
+   ll a[n + 1];
    FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      cin >> a[i];
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+   ll ans = 0;
+   unordered_map<ll, ll> m;
+   FOR(i, 2, n - 1)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      m[a[i - 1]]++;
+      FOR(j, i + 1, n)
+      {
+         if (m.find(abs(a[j] - a[i])) != m.end())
+         {
+            ans += m[abs(a[j] = a[i])];
+         }
+         if (m.find(a[j] + a[i]) != m.end())
+         {
+            ans += m[a[j] + a[i]];
+         }
+      }
+      m.clear();
    }
    cout << ans;
 }

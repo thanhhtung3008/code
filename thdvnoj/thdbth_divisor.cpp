@@ -23,30 +23,47 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll tinh(ll n)
+{
+   ll ans = 0;
+   FOR(i, 1, sqrt(n))
+   {
+      if (n % i == 0)
+      {
+         ans++;
+         if (i != n / i)
+         {
+            ans++;
+         }
+      }
+   }
+   return ans;
+}
+
+vll p[maxn];
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   ll a, b;
+   cin >> a >> b;
+   ll maxx = 0;
+   FOR(i, a, b)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      if (tinh(i) > tinh(maxx))
+      {
+         maxx = i;
+      }
+      p[tinh(i)].push_back(i);
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
-   {
-      ans = max(ans, a[i] - a[i - 2]);
-   }
-   cout << ans;
+   cout << maxx << " ";
+   cout << tinh(maxx) << " ";
+   cout << p[tinh(maxx)].size();
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

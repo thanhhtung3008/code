@@ -27,17 +27,29 @@ void solve()
 {
    ll n;
    cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   vll a(n), b(n);
+   FOR(i, 0, n - 1)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      cin >> a[i];
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+   FOR(i, 0, n - 1)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      cin >> b[i];
+   }
+   sort(b.begin(), b.end());
+   ll ans = INT_MAX;
+   for (auto i : a)
+   {
+      auto k = lower_bound(b.begin(), b.end(), -i);
+      if (k != b.end())
+      {
+         ans = min(ans, abs(i + *k));
+      }
+      if (k != b.begin())
+      {
+         k--;
+         ans = min(ans, abs(i + *k));
+      }
    }
    cout << ans;
 }

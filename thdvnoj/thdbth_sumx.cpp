@@ -23,21 +23,27 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll a[100001], b[100001];
+
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
+   ll m, n, x;
+   cin >> m >> n >> x;
+   FOR(i, 1, m)
+   {
+      cin >> a[i];
+   }
    FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      cin >> b[i];
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+   sort(b + 1, b + n + 1);
+   ll ans = 0;
+   FOR(i, 1, m)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      ll k = x - a[i];
+      ans += upper_bound(b + 1, b + n + 1, k) - lower_bound(b + 1, b + n + 1, k);
+      //cout << k << " " << upper_bound(b + 1, b + n + 1, k) - lower_bound(b + 1, b + n + 1, k) << endl;
    }
    cout << ans;
 }

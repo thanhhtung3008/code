@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_prefer","url":"d:\\code\\thdvnoj\\thdbth_prefer.cpp","tests":[{"id":1725766458601,"input":"5\n7 2 4 5 3\n2\n1 4\n3 10","output":"3 \n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_prefer.cpp","group":"local","local":true}

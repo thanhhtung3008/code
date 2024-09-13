@@ -25,19 +25,28 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   ll l, r;
+   cin >> l >> r;
+   vll nt(r - l + 1, true);
+   for (ll i = 2; i * i <= r; i++)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      ll bd = max(i * i, (i + l - 1) / i * i);
+      for (ll j = bd; j <= r; j += i)
+      {
+         nt[j - l] = false;
+      }
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+   if (1 >= l)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      nt[1 - l] = false;
+   }
+   ll ans = 0;
+   FOR(i, l, r)
+   {
+      if (nt[i - l])
+      {
+         ans++;
+      }
    }
    cout << ans;
 }

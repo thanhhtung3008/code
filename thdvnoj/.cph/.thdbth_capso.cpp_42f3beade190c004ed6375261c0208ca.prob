@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_capso","url":"d:\\code\\thdvnoj\\thdbth_capso.cpp","tests":[{"id":1725755446372,"input":"10 7\n5 2 5 3 4 3 1 6 4 0","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_capso.cpp","group":"local","local":true}

@@ -15,7 +15,7 @@ using namespace std;
 #define FOR(i, l, r) for (ll i = (l); i <= (r); ++i)
 #define FORD(i, r, l) for (ll i = (r); i >= (l); --i)
 
-const long long maxn = 1e6 + 9;
+const long long maxn = 2e6 + 9;
 const long long N = 3e4 + 9;
 const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
@@ -23,21 +23,30 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll c[maxn];
+
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
+   ll n, k;
+   cin >> n >> k;
+   ll maxx = INT_MIN;
    FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      ll y, z;
+      cin >> y >> z;
+      c[z] = y;
+      maxx = max(maxx, z);
    }
+   ll s = 0;
    ll ans = INT_MIN;
-   FOR(i, 2, n)
+   FOR(i, 0, maxx)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      s += c[i];
+      if (i >= 2 * k + 1)
+      {
+         s -= c[i - 2 * k - 1];
+      }
+      ans = max(ans, s);
    }
    cout << ans;
 }

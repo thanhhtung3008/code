@@ -25,21 +25,10 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
-   {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
-   }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
-   {
-      ans = max(ans, a[i] - a[i - 2]);
-   }
-   cout << ans;
+   ll a, b, c;
+   cin >> a >> b >> c;
+   ll s = a * b;
+   cout << s - a * c - b * c + c * c;
 }
 
 int main()

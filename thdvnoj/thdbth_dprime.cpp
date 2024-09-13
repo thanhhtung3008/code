@@ -23,30 +23,61 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool check[1000001];
+ll a[1000001];
+
+void snt()
+{
+   memset(check, true, sizeof(check));
+   check[0] = check[1] = false;
+   FOR(i, 2, sqrt(1000001))
+   {
+      if (check[i])
+      {
+         for (ll j = i * i; j <= 1000001; j += i)
+         {
+            check[j] = false;
+         }
+      }
+   }
+}
+
 void solve()
 {
    ll n;
    cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   snt();
+   ll pos = 1;
+   FOR(i, 2, 1000001)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      if (check[i])
+      {
+         a[pos] = i;
+         pos++;
+      }
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+   // cout << pos;
+   vector<ll> u;
+   ll p = 1;
+   for (ll i = 1; i < 150; i += 2)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      string s = to_string(a[i]) + to_string(a[i + 1]);
+      ll k = stoll(s);
+      // cout << k << " " << check[k] << endl;
+      if (check[k])
+      {
+         u.push_back(k);
+         // cout << k << endl;
+      }
    }
-   cout << ans;
+   cout << u[n - 1];
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

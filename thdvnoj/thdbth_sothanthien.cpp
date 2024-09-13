@@ -23,21 +23,35 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool check(ll n)
+{
+   ll b = 0;
+   ll k = n;
+   while (n)
+   {
+      b = b * 10 + (n % 10);
+      n /= 10;
+   }
+   if (__gcd(b, k) == 1)
+   {
+      return true;
+   }
+   return false;
+}
+
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+
+   ll a, b;
+   cin >> a >> b;
+   ll ans = 0;
+   FOR(i, a, b)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
-   }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
-   {
-      ans = max(ans, a[i] - a[i - 2]);
+      if (check(i))
+      {
+         // cout << i << " ";
+         ans++;
+      }
    }
    cout << ans;
 }
@@ -45,8 +59,8 @@ void solve()
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

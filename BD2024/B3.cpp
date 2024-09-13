@@ -25,21 +25,15 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   string s;
+   cin >> s;
+   string z = "";
+   FOR(i, 0, s.size() - 1)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      z += s[i];
+      reverse(z.begin(), z.end());
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
-   {
-      ans = max(ans, a[i] - a[i - 2]);
-   }
-   cout << ans;
+   cout << z;
 }
 
 int main()
@@ -50,4 +44,3 @@ int main()
    solve();
    return 0;
 }
-/// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

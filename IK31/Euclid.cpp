@@ -23,23 +23,54 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll gcd(ll a, ll b)
+{
+   if (b == 0)
+   {
+      return a;
+   }
+   return gcd(a, a % b);
+}
+// O(log(max(a,b)))
+
+ll gcd1(ll a, ll b)
+{
+   ll tmp;
+   while (b != 0)
+   {
+      tmp = a % b;
+      a = b;
+      b = tmp;
+   }
+   return tmp;
+}
+
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   FOR(i, 1, 200)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      if ((i * 9) % 15 == 12)
+      {
+         cout << i << endl;
+      }
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+}
+
+void ext_gcd(ll a, ll b, ll &d, ll &x, ll &y)
+{
+   if (b == 0)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      d = a;
+      x = 1;
+      y = 0;
    }
-   cout << ans;
+   else
+   {
+      ll x1, y1;
+      ext_gcd(b, a % b, d, x1, y1);
+      x = y1;
+      y = x1 - a / b * y1;
+   }
 }
 
 int main()

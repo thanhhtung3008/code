@@ -23,30 +23,47 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll b[maxn], v[maxn];
+
+void ktao()
+{
+   // b[1] = v[1] = 1;
+   FOR(i, 1, maxn / 2)
+   {
+      for (ll j = i; j <= maxn; j += i)
+      {
+         b[j]++;
+         v[j] += i;
+      }
+   }
+}
+
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   ktao();
+   ll t;
+   cin >> t;
+   while (t--)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      ll l, r;
+      cin >> l >> r;
+      ll s = 0, ans = 0;
+      FOR(i, l, r)
+      {
+         // cout << b[i] << " ";
+         s += b[i];
+         ans += v[i];
+      }
+      cout << s << " " << ans << endl;
+      // cout << endl;
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
-   {
-      ans = max(ans, a[i] - a[i - 2]);
-   }
-   cout << ans;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

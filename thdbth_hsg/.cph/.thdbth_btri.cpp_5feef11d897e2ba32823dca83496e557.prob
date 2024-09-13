@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_btri","url":"d:\\code\\thdbth_hsg\\thdbth_btri.cpp","tests":[{"id":1725889808975,"input":"6\n5 2 1 7 6 3","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdbth_hsg\\thdbth_btri.cpp","group":"local","local":true}

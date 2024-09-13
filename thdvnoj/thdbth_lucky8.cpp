@@ -25,28 +25,38 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   ll a;
+   cin >> a;
+   bool check = false;
+   FOR(i, 1, 17)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      ll k = a + i;
+      string s = to_string(k);
+      for (char c : s)
+      {
+         if (c == '8')
+         {
+            check = true;
+            break;
+         }
+      }
+      if (check == true)
+      {
+         cout << i;
+         break;
+      }
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+   if (check == false)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      cout << 0;
    }
-   cout << ans;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

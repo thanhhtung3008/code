@@ -27,26 +27,26 @@ void solve()
 {
    ll n;
    cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   ll s = 0;
+   FOR(i, 1, sqrt(n))
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      if (n % i == 0)
+      {
+         s += i;
+         if (i != n / i)
+         {
+            s += (n / i);
+         }
+      }
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
-   {
-      ans = max(ans, a[i] - a[i - 2]);
-   }
-   cout << ans;
+   cout << s;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

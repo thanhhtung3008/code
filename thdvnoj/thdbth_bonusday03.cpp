@@ -23,21 +23,42 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll a[1003][1003];
+ll pre[1003][1003];
+
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
+   ll n, k;
+   cin >> n >> k;
    FOR(i, 1, n)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      FOR(j, 1, n)
+      {
+         cin >> a[i][j];
+      }
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+   FOR(i, 1, n)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      FOR(j, 1, n)
+      {
+         pre[i][j] = a[i][j] + pre[i - 1][j] + pre[i][j - 1] - pre[i - 1][j - 1];
+      }
+   } /*
+    FOR(i, 1, n)
+    {
+       FOR(j, 1, n)
+       {
+          cout << pre[i][j] << " ";
+       }
+       cout << endl;
+    }*/
+   ll ans = INT_MIN;
+   FOR(i, 1, n - k + 1)
+   {
+      FOR(j, 1, n - k + 1)
+      {
+         ans = max(ans, pre[i + k - 1][j + k - 1] + pre[i - 1][j - 1] - pre[i - 1][j + k - 1] - pre[i + k - 1][j - 1]);
+      }
    }
    cout << ans;
 }

@@ -25,21 +25,26 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
-   cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   string s;
+   cin >> s;
+   bool visited[10];
+   FOR(i, 1, 9)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
+      visited[i] = false;
    }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
+   for (char c : s)
    {
-      ans = max(ans, a[i] - a[i - 2]);
+      ll k = c - 48;
+      // cout << k << endl;
+      if (k == 2 || k == 3 || k == 5 || k == 7)
+      {
+         if (!visited[k])
+         {
+            cout << k << " ";
+            visited[k] = true;
+         }
+      }
    }
-   cout << ans;
 }
 
 int main()

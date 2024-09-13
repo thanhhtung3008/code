@@ -25,19 +25,20 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n;
+   string n;
    cin >> n;
-   vll a(n + 1);
-   FOR(i, 1, n)
+   ll ans = 0;
+   FOR(i, 0, n.size() - 1)
    {
-      ll x;
-      cin >> x;
-      a[i] = a[i - 1] + x;
-   }
-   ll ans = INT_MIN;
-   FOR(i, 2, n)
-   {
-      ans = max(ans, a[i] - a[i - 2]);
+      FOR(j, i, n.size() - 1)
+      {
+         string s = n.substr(i, j - i + 1);
+         ll k = stoll(s);
+         if (k % 4 == 0)
+         {
+            ans++;
+         }
+      }
    }
    cout << ans;
 }
@@ -45,8 +46,8 @@ void solve()
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }
