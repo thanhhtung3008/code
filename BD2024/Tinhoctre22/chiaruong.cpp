@@ -25,16 +25,17 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n;
+   cin >> n;
+   vll a(n);
+   FOR(i, 0, n - 1)
+   {
+      cin >> a[i];
+   }
 }
 
 int main()
-{
+{  
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
    freopen(TASK ".inp", "r", stdin);
    freopen(TASK ".out", "w", stdout);

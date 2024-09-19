@@ -25,12 +25,29 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n, k;
+   cin >> n >> k;
+   unordered_map<ll, ll> m;
+   FOR(i, 1, n)
+   {
+      ll x;
+      cin >> x;
+      m[x]++;
+   }
+   vll p;
+   for (auto i : m)
+   {
+      p.push_back(i.sc);
+   }
+   sort(p.begin(), p.end(), greater<ll>());
+   for (auto i : p)
+   {
+      if (i < k)
+      {
+         cout << i;
+         break;
+      }
+   }
 }
 
 int main()

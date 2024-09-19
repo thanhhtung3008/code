@@ -21,16 +21,62 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "code"
+#define TASK "tienphoto"
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll l, m, n;
+   cin >> l >> m >> n;
+   if (l == 3)
+   {
+      if (n < 100)
+      {
+         if (m == 1)
+         {
+            cout << 600 * n;
+         }
+         else
+         {
+            cout << 800 * n;
+         }
+      }
+      else
+      {
+         if (m == 1)
+         {
+            cout << 500 * n;
+         }
+         else
+         {
+            cout << 700 * n;
+         }
+      }
+   }
+   else
+   {
+      if (n < 100)
+      {
+         if (m == 1)
+         {
+            cout << 300 * n;
+         }
+         else
+         {
+            cout << 400 * n;
+         }
+      }
+      else
+      {
+         if (m == 1)
+         {
+            cout << 250 * n;
+         }
+         else
+         {
+            cout << 350 * n;
+         }
+      }
+   }
 }
 
 int main()

@@ -25,12 +25,32 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n, k;
+   cin >> n >> k;
+   vll a(n + 1), f(k + 1, INT_MAX);
+   FOR(i, 1, n)
+   {
+      cin >> a[i];
+   }
+   f[0] = 0;
+   FOR(i, 0, k)
+   {
+      FOR(j, 1, n)
+      {
+         if (i - a[j] >= 0)
+         {
+            f[i] = min(f[i], f[i - a[j]] + 1);
+         }
+      }
+   }
+   if (f[k] != INT_MAX)
+   {
+      cout << f[k] << endl;
+   }
+   else
+   {
+      cout << -1;
+   }
 }
 
 int main()
@@ -41,4 +61,4 @@ int main()
    solve();
    return 0;
 }
-/// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine
+/// Stay calm, read the question slowly and understand the question, it is often simpler than you imagin

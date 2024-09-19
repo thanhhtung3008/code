@@ -23,14 +23,50 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool check(string n, ll k)
+{
+   ll nho = 0;
+   for (char c : n)
+   {
+      nho = (nho * 10 + (c - 48)) % k;
+   }
+   return nho == 0;
+}
+
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll k;
+   cin >> k;
+   queue<string> q;
+   q.push("6");
+   q.push("8");
+   while (!q.empty())
+   {
+      string v = q.front();
+      q.pop();
+      if (check(v, k))
+      {
+         cout << v;
+         break;
+      }
+      if (v.size() <= 200)
+      {
+         if (v.back() == '6')
+         {
+            q.push(v + "6");
+         }
+         else
+         {
+            q.push(v + "6");
+            q.push(v + "8");
+         }
+      }
+      else
+      {
+         cout << -1;
+         break;
+      }
+   }
 }
 
 int main()

@@ -23,22 +23,14 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
-void solve()
-{
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
-}
-
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
    freopen(TASK ".inp", "r", stdin);
    freopen(TASK ".out", "w", stdout);
-   solve();
+   string s;
+   cin >> s;
+   cout << s.size() << endl;
    return 0;
 }
 /// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

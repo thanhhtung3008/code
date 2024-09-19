@@ -27,27 +27,27 @@ void solve()
 {
    ll n, q;
    cin >> n >> q;
-   vll p(n + 1);
+   vll a(n + 1);
    FOR(i, 1, n)
    {
-      cin >> p[i];
+      cin >> a[i];
    }
-   sort(p.begin(), p.end());
+   sort(a.begin(), a.end());
    while (q--)
    {
-      ll a, b;
-      cin >> a >> b;
-      auto s = lower_bound(p.begin(), p.end(), a);
-      auto e = upper_bound(p.begin(), p.end(), b);
-      cout << distance(s, e) << endl;
+      ll x, y;
+      cin >> x >> y;
+      auto st = lower_bound(a.begin(), a.end(), x);
+      auto en = upper_bound(a.begin(), a.end(), y);
+      cout << distance(st, en) << endl;
    }
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

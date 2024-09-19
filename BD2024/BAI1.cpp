@@ -21,24 +21,36 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "code"
-
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n;
+   cin >> n;
+   ll a[n + 1];
+   FOR(i, 1, n)
+   {
+      cin >> a[i];
+   }
+   sort(a + 1, a + 1 + n);
+   ll dem = 0;
+   ll i = 1;
+   while (i < n)
+   {
+      dem++;
+      a[i]--;
+      if (a[i] == 0)
+      {
+         i++;
+      }
+      n--;
+   }
+   cout << dem;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   freopen("BAI1.inp", "r", stdin);
+   freopen("BAI1.out", "w", stdout);
    solve();
    return 0;
 }
-/// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

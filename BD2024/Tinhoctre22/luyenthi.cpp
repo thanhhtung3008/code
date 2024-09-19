@@ -23,14 +23,33 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool cmp(pll a, pll b)
+{
+   return a.ft < b.ft;
+}
+
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   vp p;
+   ll n, c;
+   cin >> n >> c;
+   FOR(i, 1, n)
+   {
+      ll a, b;
+      cin >> a >> b;
+      p.push_back({a, b});
+   }
+   ll ans = 0;
+   sort(p.begin(), p.end(), cmp);
+   FOR(i, 0, n - 1)
+   {
+      if (p[i].ft <= c)
+      {
+         ans++;
+         c += p[i].sc;
+      }
+   }
+   cout << ans;
 }
 
 int main()

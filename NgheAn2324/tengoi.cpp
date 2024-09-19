@@ -39,7 +39,7 @@ void solve()
       cin >> k;
       s.push_back(k);
    }
-   ll ml = 0, dem = 0, lef = 0;
+   ll ml = 0, dem = 0, l = 0;
    for (auto stringS : s)
    {
       unordered_set<char> ck;
@@ -47,10 +47,12 @@ void solve()
       {
          if (!check(c) || ck.find(c) != ck.end())
          {
+            l = 0;
+            continue;
          }
          else
          {
-            lef++;
+            l++;
             ck.insert(c);
             if (l > ml)
             {

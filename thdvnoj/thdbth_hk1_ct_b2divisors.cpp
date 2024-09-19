@@ -23,14 +23,38 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll u[maxn], v[maxn];
+
+void ktao()
+{
+   FOR(i, 1, sqrt(maxn))
+   {
+      u[i * i]++;
+      v[i * i] += i;
+      for (ll j = i + 1; j <= maxn / i; j++)
+      {
+         u[i * j] += 2;
+         v[i * j] += (i + j);
+      }
+   }
+   FOR(i, 1, maxn)
+   {
+      u[i] += u[i - 1];
+      v[i] += v[i - 1];
+   }
+}
+
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll t;
+   cin >> t;
+   ktao();
+   while (t--)
+   {
+      ll l, r;
+      cin >> l >> r;
+      cout << u[r] - u[l - 1] << " " << v[r] - v[l - 1] << endl;
+   }
 }
 
 int main()

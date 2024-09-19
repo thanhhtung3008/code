@@ -21,16 +21,18 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "code"
+#define TASK "MULT"
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll k;
+   cin >> k;
+   while (k--)
+   {
+      ll n, x;
+      cin >> n >> x;
+      cout << x / n << endl;
+   }
 }
 
 int main()

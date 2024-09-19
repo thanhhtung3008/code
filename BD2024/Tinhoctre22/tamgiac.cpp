@@ -25,12 +25,49 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n;
+   cin >> n;
+   ll a[n + 1];
+   FOR(i, 1, n)
+   {
+      cin >> a[i];
+   }
+   sort(a + 1, a + n + 1);
+   ll ans = 0;
+   /*
+   FORD(i, n, 1)
+   {
+      ll l = 1, r = i - 1;
+      while (l < r)
+      {
+         // ll m = (l + r) / 2;
+         if (a[r] + a[l] > a[i])
+         {
+            ans += (r - l);
+            r--;
+         }
+         else
+         {
+            l++;
+         }
+      }
+   }*/
+
+   FOR(i, 1, n - 2)
+   {
+      FOR(j, i + 1, n - 1)
+      {
+         FOR(k, j + 1, n)
+         {
+            if (a[i] + a[j] > a[k] && a[i] + a[k] > a[j] && a[j] + a[k] > a[i])
+            {
+               cout << a[i] << " " << a[j] << " " << a[k] << endl;
+               ans++;
+            }
+         }
+      }
+   }
+   cout << ans;
 }
 
 int main()
@@ -41,4 +78,3 @@ int main()
    solve();
    return 0;
 }
-/// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

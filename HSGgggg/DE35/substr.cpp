@@ -21,26 +21,41 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "code"
+#define TASK "substr"
+
+ll dp[maxn];
 
 void solve()
 {
+   ll k;
+   cin >> k;
    string s;
    cin >> s;
-   string z = "";
-   FOR(i, 0, s.size() - 1)
+   ll n = s.size() - 1;
+   dp[0] = 1;
+   ll ans = 0;
+   ll kq = 0;
+   // cout << n << endl;
+   while (n >= 0)
    {
-      z += s[i];
-      reverse(z.begin(), z.end());
+      ans += (s[n] - 48);
+      if (ans >= k)
+      {
+         kq += dp[ans - k];
+         // cout << kq << " " << n << endl;
+      }
+      dp[ans]++;
+      n--;
    }
-   cout << z;
+   cout << kq;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
+   freopen(TASK ".inp", "r", stdin);
+   freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }
+/// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

@@ -25,12 +25,24 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n;
+   cin >> n;
+   vll a(n + 1);
+   FOR(i, 1, n)
+   {
+      cin >> a[i];
+   }
+   sort(a.begin(), a.end());
+   ll q;
+   cin >> q;
+   while (q--)
+   {
+      ll l, r;
+      cin >> l >> r;
+      auto st = lower_bound(a.begin(), a.end(), l);
+      auto en = upper_bound(a.begin(), a.end(), r);
+      cout << distance(st, en) << endl;
+   }
 }
 
 int main()

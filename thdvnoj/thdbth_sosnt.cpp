@@ -23,14 +23,52 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool check[10000001];
+ll a[10000001];
+
+void snt()
+{
+   memset(check, true, sizeof(check));
+   check[0] = check[1] = false;
+   FOR(i, 2, sqrt(10000001))
+   {
+      if (check[i])
+      {
+         for (ll j = i * i; j <= 10000001; j += i)
+         {
+            check[j] = false;
+         }
+      }
+   }
+   ll pos = 1;
+   FOR(i, 2, 10000001)
+   {
+      if (check[i])
+      {
+         a[pos] = i;
+         pos++;
+      }
+   }
+}
+
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll k;
+   cin >> k;
+   snt();
+   ll pos = 0;
+   FOR(i, 1, 10000001)
+   {
+      if (check[i])
+      {
+         pos++;
+         if (pos == k)
+         {
+            cout << a[i];
+            break;
+         }
+      }
+   }
 }
 
 int main()

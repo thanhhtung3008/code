@@ -25,12 +25,29 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n, k;
+   cin >> n >> k;
+   vll a(n);
+   FOR(i, 0, n - 1)
+   {
+      cin >> a[i];
+   }
+   ll ml = INT_MAX;
+   FOR(i, 0, n - 1)
+   {
+      if (a[i] > k && a[i] <= ml)
+      {
+         ml = a[i];
+      }
+   }
+   cout << ml << endl;
+   FOR(i, 0, n - 1)
+   {
+      if (a[i] == ml)
+      {
+         cout << i + 1 << " ";
+      }
+   }
 }
 
 int main()

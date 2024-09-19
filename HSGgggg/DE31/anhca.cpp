@@ -21,16 +21,25 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "code"
+#define TASK "anhca"
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   string n;
+   cin >> n;
+   unordered_map<ll, ll> m;
+   for (char c : n)
+   {
+      ll k = c - 48;
+      m[k]++;
+   }
+   FORD(i, 9, 0)
+   {
+      FOR(j, 1, m[i])
+      {
+         cout << i;
+      }
+   }
 }
 
 int main()

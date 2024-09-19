@@ -25,12 +25,9 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll a, b, c;
+   cin >> a >> b >> c;
+   cout << a * b - a * c - b * c + c * c;
 }
 
 int main()

@@ -23,14 +23,21 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
-void solve()
+pll countA_B(const string &s, ll n)
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll countAA = 0, countBB = 0;
+   FOR(i, 0, n - 1)
+   {
+      if (s[i] == 'A' && s[i + 1] == 'A')
+      {
+         countAA++;
+      }
+      if (s[i] == 'B' && s[i + 1] == 'B')
+      {
+         countBB++;
+      }
+   }
+   return {countAA, countBB};
 }
 
 int main()
@@ -38,7 +45,26 @@ int main()
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
    freopen(TASK ".inp", "r", stdin);
    freopen(TASK ".out", "w", stdout);
-   solve();
+   ll n;
+   string s;
+   cin >> n >> s;
+   string rA = s, rB = s;
+   FOR(i, 0, n - 1)
+   {
+      if (rA[i] == '*')
+      {
+         rA[i] = 'A';
+      }
+      if (rB[i] == '*')
+      {
+         rB[i] = 'B';
+      }
+   }
+   pll kqA = countA_B(rA, n);
+   pll kqB = countA_B(rB, n);
+   ll maxAA = max(kqA.first, kqB.first);
+   ll maxBB = max(kqA.second, kqB.second);
+   cout << max(maxAA, maxBB);
    return 0;
 }
 /// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine

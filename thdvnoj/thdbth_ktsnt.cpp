@@ -23,14 +23,35 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+bool check(ll n)
+{
+   if (n < 2)
+   {
+      return false;
+   }
+   if (n == 2 || n == 3)
+   {
+      return true;
+   }
+   if (n % 2 == 0 || n % 3 == 0)
+   {
+      return false;
+   }
+   for (ll i = 5; i <= sqrt(n); i += 6)
+   {
+      if (n % i == 0 || n % (i + 2) == 0)
+      {
+         return false;
+      }
+   }
+   return true;
+}
+
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n;
+   cin >> n;
+   cout << check(n);
 }
 
 int main()

@@ -23,14 +23,34 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
+ll a[maxn];
+
 void solve()
 {
-   ll n, x, y;
-   cin >> n >> x >> y;
-   ll k = __gcd(x, y);
-   ll c = x / k * y;
-   // cout << k;
-   cout << n / c;
+   ll n;
+   cin >> n;
+   FOR(i, 1, n)
+   {
+      ll x;
+      cin >> x;
+      a[i] = a[i - 1] + x;
+   }
+   // cout << endl;
+   unordered_map<ll, ll> m;
+   ll l = INT_MIN;
+   m[0] = 0;
+   FOR(i, 1, n)
+   {
+      if (m.find(a[i]) == m.end())
+      {
+         m[a[i]] = i;
+      }
+      else
+      {
+         l = max(l, i - m[a[i]]);
+      }
+   }
+   cout << l;
 }
 
 int main()

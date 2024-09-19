@@ -27,14 +27,20 @@ ll b[maxn], v[maxn];
 
 void ktao()
 {
-   // b[1] = v[1] = 1;
-   FOR(i, 1, maxn / 2)
+   FOR(i, 1, sqrt(maxn))
    {
-      for (ll j = i; j <= maxn; j += i)
+      b[i * i]++;
+      v[i * i] += i;
+      for (ll j = i + 1; j <= maxn / i; j++)
       {
-         b[j]++;
-         v[j] += i;
+         b[i * j] += 2;
+         v[i * j] += (i + j);
       }
+   }
+   FOR(i, 1, maxn)
+   {
+      b[i] += b[i - 1];
+      v[i] += v[i - 1];
    }
 }
 
@@ -47,15 +53,7 @@ void solve()
    {
       ll l, r;
       cin >> l >> r;
-      ll s = 0, ans = 0;
-      FOR(i, l, r)
-      {
-         // cout << b[i] << " ";
-         s += b[i];
-         ans += v[i];
-      }
-      cout << s << " " << ans << endl;
-      // cout << endl;
+      cout << b[r] - b[l - 1] << " " << v[r] - v[l - 1] << endl;
    }
 }
 
