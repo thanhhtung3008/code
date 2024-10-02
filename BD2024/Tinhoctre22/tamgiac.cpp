@@ -1,5 +1,3 @@
-/* Author : Nguyen Thanh Tung - Tran Hung Dao High School for Gifted Student */
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -21,7 +19,7 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "code"
+#define TASK "tamgiac"
 
 void solve()
 {
@@ -34,7 +32,6 @@ void solve()
    }
    sort(a + 1, a + n + 1);
    ll ans = 0;
-   /*
    FORD(i, n, 1)
    {
       ll l = 1, r = i - 1;
@@ -51,22 +48,22 @@ void solve()
             l++;
          }
       }
-   }*/
-
-   FOR(i, 1, n - 2)
-   {
-      FOR(j, i + 1, n - 1)
-      {
-         FOR(k, j + 1, n)
-         {
-            if (a[i] + a[j] > a[k] && a[i] + a[k] > a[j] && a[j] + a[k] > a[i])
-            {
-               cout << a[i] << " " << a[j] << " " << a[k] << endl;
-               ans++;
-            }
-         }
-      }
    }
+   /*
+    FOR(i, 1, n - 2)
+    {
+       FOR(j, i + 1, n - 1)
+       {
+          FOR(k, j + 1, n)
+          {
+             if (a[i] + a[j] > a[k] && a[i] + a[k] > a[j] && a[j] + a[k] > a[i])
+             {
+                cout << a[i] << " " << a[j] << " " << a[k] << endl;
+                ans++;
+             }
+          }
+       }
+    }*/
    cout << ans;
 }
 

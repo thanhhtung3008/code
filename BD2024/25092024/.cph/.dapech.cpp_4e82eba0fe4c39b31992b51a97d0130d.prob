@@ -1,0 +1,1 @@
+{"name":"Local: dapech","url":"d:\\code\\BD2024\\25092024\\dapech.cpp","tests":[{"id":1727018777053,"input":"4 6 2\n1 4 3 3 2 4\n2 4 2 1 4 1\n2 3 4 4 1 1\n1 1 2 3 4 4","output":"15"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\BD2024\\25092024\\dapech.cpp","group":"local","local":true}

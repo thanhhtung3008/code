@@ -1,0 +1,1 @@
+{"name":"Local: xaudoixung","url":"d:\\code\\CONTEST\\xaudoixung.cpp","tests":[{"id":1727616569883,"input":"abccba","output":"yes"},{"id":1727616577993,"input":"aabb","output":"no"},{"id":1727616589265,"input":"aba","output":"yes"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\CONTEST\\xaudoixung.cpp","group":"local","local":true}

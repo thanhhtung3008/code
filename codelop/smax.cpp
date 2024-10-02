@@ -1,3 +1,5 @@
+/* Author : Nguyen Thanh Tung - Tran Hung Dao High School for Gifted Student */
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -19,39 +21,31 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "code"
+
+ll f[maxn], a[maxn];
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
+   ll n;
+   cin >> n;
    FOR(i, 1, n)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
+      cin >> a[i];
    }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
+   f[1] = a[1];
+   FOR(i, 2, n)
    {
-      if (p[i].ft <= c)
-      {
-         ans++;
-         c += p[i].sc;
-      }
-      else
-         break;
+      f[i] = max(a[i], f[i - 1] + a[i]);
    }
-   cout << ans;
+   cout << *max_element(f + 1, f + n + 1);
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

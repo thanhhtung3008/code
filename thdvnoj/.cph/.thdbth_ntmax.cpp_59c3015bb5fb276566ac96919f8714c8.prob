@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_ntmax","url":"d:\\code\\thdvnoj\\thdbth_ntmax.cpp","tests":[{"id":1727095368306,"input":"10\n4 5 2 3 1 5 7 11 5 2","output":"11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_ntmax.cpp","group":"local","local":true}

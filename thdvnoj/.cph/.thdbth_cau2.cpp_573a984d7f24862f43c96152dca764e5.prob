@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_cau2","url":"d:\\code\\thdvnoj\\thdbth_cau2.cpp","tests":[{"id":1727712802474,"input":"abcde\nabedc","output":"3"},{"id":1727713080639,"input":"abcde\nebcda","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_cau2.cpp","group":"local","local":true}

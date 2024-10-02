@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_demso3","url":"d:\\code\\thdvnoj\\thdbth_demso3.cpp","tests":[{"id":1726929123124,"input":"4 9 2 3 ","output":"2"},{"id":1726929154403,"input":"4 14 1 1","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_demso3.cpp","group":"local","local":true}

@@ -13,36 +13,44 @@ using namespace std;
 #define FOR(i, l, r) for (ll i = (l); i <= (r); ++i)
 #define FORD(i, r, l) for (ll i = (r); i >= (l); --i)
 
-const long long maxn = 1e6 + 9;
+const long long maxn = 5e6 + 9;
 const long long N = 3e4 + 9;
 const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "uocchat"
+
+ll u[maxn];
+
+void ktao()
+{
+   FOR(i, 1, sqrt(maxn))
+   {
+      u[i * i] += i;
+      for (ll j = i + 1; j <= maxn / i; j++)
+      {
+         u[i * j] += (i + j);
+      }
+   }
+   FOR(i, 1, maxn)
+   {
+      u[i] -= i;
+   }
+}
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
+   ktao();
+   ll n, d;
+   cin >> n >> d;
+   ll ans = 0;
    FOR(i, 1, n)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
-   }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
-   {
-      if (p[i].ft <= c)
+      if (abs(i - u[i]) <= d)
       {
-         ans++;
-         c += p[i].sc;
+         ++ans;
       }
-      else
-         break;
    }
    cout << ans;
 }

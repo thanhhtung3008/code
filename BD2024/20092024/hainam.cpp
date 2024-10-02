@@ -19,32 +19,33 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "hainam"
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
+   ll n, k;
+   cin >> n >> k;
+   vll a(maxn, 0);
+   ll ans = INT_MIN;
    FOR(i, 1, n)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
+      ll c, x;
+      cin >> c >> x;
+      a[x] = c;
+      ans = max(ans, x);
    }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
+   ll s = 0;
+   ll kq = INT_MIN;
+   FOR(i, 0, ans)
    {
-      if (p[i].ft <= c)
+      s += a[i];
+      if (i >= 2 * k + 1)
       {
-         ans++;
-         c += p[i].sc;
+         s -= a[i - (2 * k + 1)];
       }
-      else
-         break;
+      kq = max(s, kq);
    }
-   cout << ans;
+   cout << kq;
 }
 
 int main()

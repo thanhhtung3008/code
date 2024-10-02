@@ -19,39 +19,48 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "szero"
+
+ll a[maxn];
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
+   ll n;
+   cin >> n;
    FOR(i, 1, n)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
+      ll x;
+      cin >> x;
+      a[i] = a[i - 1] + x;
    }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
+   ll l, r;
+   ll ans = INT_MIN;
+   unordered_map<ll, ll> m;
+   m[0] = 0;
+   FOR(i, 1, n)
    {
-      if (p[i].ft <= c)
+      if (m.find(a[i]) == m.end())
       {
-         ans++;
-         c += p[i].sc;
+         m[a[i]] = i;
       }
       else
-         break;
+      {
+         if (i - m[a[i]] > ans)
+         {
+            ans = i - m[a[i]];
+            l = m[a[i]] + 1;
+            r = i;
+         }
+      }
    }
-   cout << ans;
+   cout << l << " " << r;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

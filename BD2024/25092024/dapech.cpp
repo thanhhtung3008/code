@@ -19,39 +19,41 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "dapech"
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
-   FOR(i, 1, n)
+   ll m, n, k;
+   cin >> m >> n >> k;
+   unordered_map<ll, ll> mp;
+   FOR(i, 1, m)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
-   }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
-   {
-      if (p[i].ft <= c)
+      FOR(j, 1, n)
       {
-         ans++;
-         c += p[i].sc;
+         ll x;
+         cin >> x;
+         mp[x]++;
       }
-      else
-         break;
    }
-   cout << ans;
+   vll p;
+   for (auto i : mp)
+   {
+      p.push_back(i.sc);
+   }
+   ll s = 0;
+   sort(p.begin(), p.end(), greater<ll>());
+   FOR(i, 0, k - 1)
+   {
+      s += p[i];
+   }
+   cout << s;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

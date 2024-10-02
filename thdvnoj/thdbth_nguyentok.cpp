@@ -1,3 +1,5 @@
+/* Author : Nguyen Thanh Tung - Tran Hung Dao High School for Gifted Student */
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -19,39 +21,50 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "code"
+
+bool check[15000000];
+
+void ktao()
+{
+   memset(check, true, sizeof(check));
+   check[0] = check[1] = false;
+   FOR(i, 2, sqrt(15000000))
+   {
+      if (check[i])
+      {
+         for (ll j = i * i; j <= 15000000; j += i)
+         {
+            check[j] = false;
+         }
+      }
+   }
+}
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
-   FOR(i, 1, n)
+   ll k;
+   cin >> k;
+   ktao();
+   FOR(i, 2, 15000000)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
-   }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
-   {
-      if (p[i].ft <= c)
+      if (check[i])
       {
-         ans++;
-         c += p[i].sc;
+         k--;
       }
-      else
+      if (k == 0)
+      {
+         cout << i;
          break;
+      }
    }
-   cout << ans;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

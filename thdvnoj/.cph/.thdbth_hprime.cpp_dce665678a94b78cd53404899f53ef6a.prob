@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_hprime","url":"d:\\code\\thdvnoj\\thdbth_hprime.cpp","tests":[{"id":1727095923336,"input":"500 16 ","output":"7\n79\n97\n277\n349\n367\n439\n457"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_hprime.cpp","group":"local","local":true}

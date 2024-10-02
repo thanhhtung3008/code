@@ -19,30 +19,32 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "cows"
+
+bool cmp(pll a, pll b)
+{
+   return a.ft * b.sc < a.sc * b.ft;
+}
 
 void solve()
 {
+   ll n;
+   cin >> n;
    vp p;
-   ll n, c;
-   cin >> n >> c;
+   ll s = 0;
    FOR(i, 1, n)
    {
       ll a, b;
       cin >> a >> b;
       p.push_back({a, b});
+      s += b;
    }
+   sort(p.begin(), p.end(), cmp);
    ll ans = 0;
-   sort(p.begin(), p.end());
    FOR(i, 0, n - 1)
    {
-      if (p[i].ft <= c)
-      {
-         ans++;
-         c += p[i].sc;
-      }
-      else
-         break;
+      s -= p[i].sc;
+      ans += p[i].ft * 2 * (s);
    }
    cout << ans;
 }

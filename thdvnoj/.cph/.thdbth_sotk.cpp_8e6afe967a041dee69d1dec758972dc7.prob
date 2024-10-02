@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_sotk","url":"d:\\code\\thdvnoj\\thdbth_sotk.cpp","tests":[{"id":1727517456893,"input":"7853\n3","output":"5"},{"id":1727517463454,"input":"509890\n2","output":"8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_sotk.cpp","group":"local","local":true}

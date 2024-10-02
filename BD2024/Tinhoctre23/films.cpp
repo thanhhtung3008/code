@@ -19,32 +19,35 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "films"
+
+bool cmp(pll a, pll b)
+{
+   return a.sc < b.sc;
+}
 
 void solve()
 {
+   ll n;
+   cin >> n;
    vp p;
-   ll n, c;
-   cin >> n >> c;
-   FOR(i, 1, n)
-   {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
-   }
-   ll ans = 0;
-   sort(p.begin(), p.end());
    FOR(i, 0, n - 1)
    {
-      if (p[i].ft <= c)
-      {
-         ans++;
-         c += p[i].sc;
-      }
-      else
-         break;
+      ll x, y;
+      cin >> x >> y;
+      p.push_back({x, y});
    }
-   cout << ans;
+   sort(p.begin(), p.end(), cmp);
+   ll d = 0, x = 0;
+   FOR(i, 0, n - 1)
+   {
+      if (p[i].ft >= x)
+      {
+         x = p[i].sc;
+         d++;
+      }
+   }
+   cout << d;
 }
 
 int main()

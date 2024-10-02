@@ -1,0 +1,1 @@
+{"name":"Local: daytang","url":"d:\\code\\codelop\\daytang.cpp","tests":[{"id":1727164875267,"input":"6\n1 2 6 2 4 5","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\codelop\\daytang.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: extended_euclid","url":"d:\\code\\codelop\\extended_euclid.cpp","tests":[{"id":1727761876008,"input":"240 46","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\codelop\\extended_euclid.cpp","group":"local","local":true}

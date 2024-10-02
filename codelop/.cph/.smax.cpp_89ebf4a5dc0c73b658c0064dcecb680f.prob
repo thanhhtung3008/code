@@ -1,0 +1,1 @@
+{"name":"Local: smax","url":"d:\\code\\codelop\\smax.cpp","tests":[{"id":1727162072099,"input":"5\n4 -7 5 1 -3","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\codelop\\smax.cpp","group":"local","local":true}

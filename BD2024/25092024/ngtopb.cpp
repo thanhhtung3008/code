@@ -19,39 +19,49 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "ngtopb"
+
+ll tinh(ll n)
+{
+   ll dem = 0;
+   FOR(i, 2, sqrt(n))
+   {
+      if (n % i == 0)
+      {
+         dem++;
+         while (n % i == 0)
+         {
+            n /= i;
+         }
+      }
+   }
+   if (n != 1)
+   {
+      dem++;
+   }
+   return dem;
+}
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
+   ll n, k;
+   cin >> n >> k;
    FOR(i, 1, n)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
-   }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
-   {
-      if (p[i].ft <= c)
+      ll x;
+      cin >> x;
+      if (tinh(x) == k)
       {
-         ans++;
-         c += p[i].sc;
+         cout << i << " ";
       }
-      else
-         break;
    }
-   cout << ans;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

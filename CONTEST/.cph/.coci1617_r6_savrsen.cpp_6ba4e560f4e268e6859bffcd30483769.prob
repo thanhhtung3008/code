@@ -1,0 +1,1 @@
+{"name":"Local: coci1617_r6_savrsen","url":"d:\\code\\CONTEST\\coci1617_r6_savrsen.cpp","tests":[{"id":1727021286461,"input":"1 9\n","output":"21"},{"id":1727021291053,"input":"24 24","output":"12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\CONTEST\\coci1617_r6_savrsen.cpp","group":"local","local":true}

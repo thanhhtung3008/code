@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_sdb","url":"d:\\code\\thdvnoj\\thdbth_sdb.cpp","tests":[{"id":1727517004739,"input":"2\n1 10\n220 230","output":"0\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_sdb.cpp","group":"local","local":true}

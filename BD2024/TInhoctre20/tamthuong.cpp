@@ -1,3 +1,5 @@
+/* Author : Nguyen Thanh Tung - Tran Hung Dao High School for Gifted Student */
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -19,32 +21,45 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "tamthuong"
+
+ll dp[maxn];
+
+void ktao()
+{
+   FOR(i, 1, sqrt(maxn))
+   {
+      dp[i * i] += i;
+      for (ll j = i + 1; j <= maxn / i; j++)
+      {
+         dp[i * j] += (i + j);
+      }
+   }
+   FOR(i, 1, maxn)
+   {
+      dp[i] -= i;
+   }
+}
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
-   FOR(i, 1, n)
+   ktao();
+   ll l, h;
+   cin >> l >> h;
+   ll kq = 0;
+   double ans = INT_MAX;
+   FOR(i, l, h)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
-   }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
-   {
-      if (p[i].ft <= c)
+      double k = (double)dp[i] / i;
+      // cout << i << " " << dp[i] << " " << k << endl;
+      if (k < ans)
       {
-         ans++;
-         c += p[i].sc;
+         ans = k;
+         // cout << ans << endl;
+         kq = i;
       }
-      else
-         break;
    }
-   cout << ans;
+   cout << kq;
 }
 
 int main()

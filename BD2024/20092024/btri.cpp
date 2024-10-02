@@ -13,36 +13,36 @@ using namespace std;
 #define FOR(i, l, r) for (ll i = (l); i <= (r); ++i)
 #define FORD(i, r, l) for (ll i = (r); i >= (l); --i)
 
-const long long maxn = 1e6 + 9;
+const long long maxn = 1e5 + 9;
 const long long N = 3e4 + 9;
 const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "luyenthi"
+#define TASK "btri"
+
+ll dd[maxn], a[maxn], ans, n;
 
 void solve()
 {
-   vp p;
-   ll n, c;
-   cin >> n >> c;
+   cin >> n;
    FOR(i, 1, n)
    {
-      ll a, b;
-      cin >> a >> b;
-      p.push_back({a, b});
+      cin >> a[i];
    }
-   ll ans = 0;
-   sort(p.begin(), p.end());
-   FOR(i, 0, n - 1)
+   sort(a + 1, a + n + 1);
+   FOR(i, 1, n)
    {
-      if (p[i].ft <= c)
+      FOR(j, 0, a[i] / 2)
       {
-         ans++;
-         c += p[i].sc;
+         ans += dd[j] * dd[a[i] - j];
       }
-      else
-         break;
+      if (a[i] % 2 == 0)
+      {
+         ans -= (dd[a[i] / 2] * dd[a[i] / 2]);
+         ans += (dd[a[i] / 2] - 1) * dd[a[i] / 2] / 2;
+      }
+      dd[a[i]]++;
    }
    cout << ans;
 }
