@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_b2bi","url":"d:\\code\\thdvnoj\\thdbth_b2bi.cpp","tests":[{"id":1728047620730,"input":"5 3 9\n2 1 1 2 1","output":"33"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_b2bi.cpp","group":"local","local":true}

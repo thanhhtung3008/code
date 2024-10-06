@@ -1,0 +1,1 @@
+{"name":"Local: disnum","url":"d:\\code\\PROHSG\\disnum.cpp","tests":[{"id":1728185563543,"input":"8\n3  7  5  4  7  6  6  1\n","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\PROHSG\\disnum.cpp","group":"local","local":true}

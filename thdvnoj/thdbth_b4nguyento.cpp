@@ -1,3 +1,5 @@
+/* Author : Nguyen Thanh Tung - Tran Hung Dao High School for Gifted Student */
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -21,56 +23,48 @@ const long long MOD = 1e9 + 7;
 
 #define TASK "code"
 
-ll exgcd(ll a, ll b, ll &x, ll &y)
+vector<ll> a(maxn);
+ll n, k;
+ll mina[maxn];
+unordered_map<ll, ll> idx;
+unordered_map<ll, ll> dem;
+void ktao()
 {
-   if (b == 0)
+   FOR(i, 2, maxn)
    {
-      x = 1;
-      y = 0;
-      return a;
+      if (mina[i] == 0)
+      {
+         for (ll j = i; j <= maxn; j += i)
+         {
+            if (mina[j] == 0)
+            {
+               mina[j] = i;
+            }
+         }
+      }
    }
-   ll x1, y1;
-   ll d = exgcd(b, a % b, x1, y1);
-   x = y1;
-   y = x1 - (a / b) * y1;
-   return d;
 }
 
 void solve()
 {
-   ll a, b, m;
-   cin >> a >> b >> m;
-   ll s, t;
-   ll d = exgcd(abs(a), m, s, t);
-   if (b % d != 0)
+   ktao();
+   cin >> n >> k;
+   FOR(i, 1, n)
    {
-      cout << 0 << endl;
-      return;
+      cin >> a[i];
+      idx[a[i]] = i;
    }
-   if (a < 0)
+   FOR(i, 2, k)
    {
-      s = -s;
-   }
-   ll x0 = (s * (b / d)) % m;
-   if (x0 < 0)
-   {
-      x0 += m;
-   }
-   vector<ll> p;
-   for (ll i = 0; i < d; i++)
-   {
-      ll x = (x0 + i * (m / d)) % m;
-      if (x < 0)
+      ll s = mina[i];
+      if (idx.count(s))
       {
-         x += m;
+         dem[s]++;
       }
-      p.push_back(x);
    }
-   cout << p.size() << endl;
-   sort(p.begin(), p.end());
-   for (ll i : p)
+   FOR(i, 1, n)
    {
-      cout << i << endl;
+      cout << dem[a[i]] << endl;
    }
 }
 

@@ -1,3 +1,5 @@
+/* Author : Nguyen Thanh Tung - Tran Hung Dao High School for Gifted Student */
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -19,55 +21,50 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "code"
+#define TASK "hprime"
 
-ll exgcd(ll a, ll b, ll &x, ll &y)
+ll n, h, check[maxn];
+vll p;
+
+void prime()
 {
-   if (b == 0)
+   memset(check, true, sizeof(check));
+   check[0] = check[1] = false;
+   FOR(i, 2, sqrt(maxn))
    {
-      x = 1;
-      y = 0;
-      return a;
+      if (check[i])
+      {
+         for (ll j = i * i; j <= maxn; j += i)
+         {
+            check[j] = false;
+         }
+      }
    }
-   ll x1, y1;
-   ll d = exgcd(b, a % b, x1, y1);
-   x = y1;
-   y = x1 - (a / b) * y1;
-   return d;
+}
+
+ll tinh(ll n)
+{
+   ll s = 0;
+   while (n)
+   {
+      s += (n % 10);
+      n /= 10;
+   }
+   return s;
 }
 
 void solve()
 {
-   ll a, b, m;
-   cin >> a >> b >> m;
-   ll s, t;
-   ll d = exgcd(abs(a), m, s, t);
-   if (b % d != 0)
+   prime();
+   cin >> n >> h;
+   FOR(i, 2, n)
    {
-      cout << 0 << endl;
-      return;
-   }
-   if (a < 0)
-   {
-      s = -s;
-   }
-   ll x0 = (s * (b / d)) % m;
-   if (x0 < 0)
-   {
-      x0 += m;
-   }
-   vector<ll> p;
-   for (ll i = 0; i < d; i++)
-   {
-      ll x = (x0 + i * (m / d)) % m;
-      if (x < 0)
+      if (check[i] && tinh(i) == h)
       {
-         x += m;
+         p.push_back(i);
       }
-      p.push_back(x);
    }
    cout << p.size() << endl;
-   sort(p.begin(), p.end());
    for (ll i : p)
    {
       cout << i << endl;

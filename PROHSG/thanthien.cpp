@@ -1,3 +1,5 @@
+/* Author : Nguyen Thanh Tung - Tran Hung Dao High School for Gifted Student */
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -19,59 +21,32 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "code"
+#define TASK "thanthien"
 
-ll exgcd(ll a, ll b, ll &x, ll &y)
+ll rev(ll n)
 {
-   if (b == 0)
+   ll s = 0;
+   while (n)
    {
-      x = 1;
-      y = 0;
-      return a;
+      s = s * 10 + (n % 10);
+      n /= 10;
    }
-   ll x1, y1;
-   ll d = exgcd(b, a % b, x1, y1);
-   x = y1;
-   y = x1 - (a / b) * y1;
-   return d;
+   return s;
 }
 
 void solve()
 {
-   ll a, b, m;
-   cin >> a >> b >> m;
-   ll s, t;
-   ll d = exgcd(abs(a), m, s, t);
-   if (b % d != 0)
+   ll a, b;
+   cin >> a >> b;
+   ll ans = 0;
+   FOR(i, a, b)
    {
-      cout << 0 << endl;
-      return;
-   }
-   if (a < 0)
-   {
-      s = -s;
-   }
-   ll x0 = (s * (b / d)) % m;
-   if (x0 < 0)
-   {
-      x0 += m;
-   }
-   vector<ll> p;
-   for (ll i = 0; i < d; i++)
-   {
-      ll x = (x0 + i * (m / d)) % m;
-      if (x < 0)
+      if (__gcd(i, rev(i)) == 1)
       {
-         x += m;
+         ans++;
       }
-      p.push_back(x);
    }
-   cout << p.size() << endl;
-   sort(p.begin(), p.end());
-   for (ll i : p)
-   {
-      cout << i << endl;
-   }
+   cout << ans;
 }
 
 int main()

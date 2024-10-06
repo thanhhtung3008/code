@@ -1,0 +1,1 @@
+{"name":"Local: hprime","url":"d:\\code\\PROHSG\\hprime.cpp","tests":[{"id":1728185090722,"input":"500 16\n","output":"7\n79\n97\n277\n349\n367\n439\n457"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\PROHSG\\hprime.cpp","group":"local","local":true}

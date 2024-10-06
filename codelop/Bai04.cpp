@@ -35,8 +35,8 @@ void solve()
 
 int main()
 {
-   // freopen("BAI04.inp", "r", stdin);
-   // freopen("BAI04.out", "w", stdout);
+   freopen("BAI04.inp", "r", stdin);
+   freopen("BAI04.out", "w", stdout);
    solve();
    return 0;
 }

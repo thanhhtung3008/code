@@ -1,0 +1,1 @@
+{"name":"Local: dieukhien","url":"d:\\code\\BD2024\\10042024\\dieukhien.cpp","tests":[{"id":1728027787115,"input":"2 3 0\n0 0 0\n0 0 1","output":"5"},{"id":1728027795975,"input":"2 3 2\n0 0 0\n0 0 2\n2 3","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\BD2024\\10042024\\dieukhien.cpp","group":"local","local":true}

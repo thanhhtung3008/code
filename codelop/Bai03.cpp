@@ -40,8 +40,8 @@ void solve()
 
 int main()
 {
-   // freopen("BAI03.inp", "r", stdin);
-   // freopen("BAI03.out", "w", stdout);
+   freopen("BAI03.inp", "r", stdin);
+   freopen("BAI03.out", "w", stdout);
    solve();
    return 0;
 }

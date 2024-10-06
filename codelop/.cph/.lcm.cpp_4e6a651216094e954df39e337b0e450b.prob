@@ -1,0 +1,1 @@
+{"name":"Local: lcm","url":"d:\\code\\codelop\\lcm.cpp","tests":[{"id":1727869025193,"input":"3\n4 6 3","output":"12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\codelop\\lcm.cpp","group":"local","local":true}

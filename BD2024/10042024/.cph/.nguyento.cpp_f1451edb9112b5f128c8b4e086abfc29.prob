@@ -1,0 +1,1 @@
+{"name":"Local: nguyento","url":"d:\\code\\BD2024\\10042024\\nguyento.cpp","tests":[{"id":1728026623781,"input":"21","output":"25"},{"id":1728026631666,"input":"120","output":"121"},{"id":1728026706140,"input":"5","output":"9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\BD2024\\10042024\\nguyento.cpp","group":"local","local":true}

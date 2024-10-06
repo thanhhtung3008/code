@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const long long maxn = 1001;
+const long long maxn = 1005;
 
 long long a[maxn];
 
@@ -26,8 +26,8 @@ void solve()
 
 int main()
 {
-   // freopen("BAI01.inp", "r", stdin);
-   // freopen("BAI02.out", "w", stdout);
+   freopen("BAI01.inp", "r", stdin);
+   freopen("BAI01.out", "w", stdout);
    solve();
    return 0;
 }

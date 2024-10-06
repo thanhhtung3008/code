@@ -24,7 +24,7 @@ void solve()
       }
    }
    long long q;
-   cin >> q; 
+   cin >> q;
    while (q--)
    {
       long long x1, y1, x2, y2;

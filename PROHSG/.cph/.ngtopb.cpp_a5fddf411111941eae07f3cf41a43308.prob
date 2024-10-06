@@ -1,0 +1,1 @@
+{"name":"Local: ngtopb","url":"d:\\code\\PROHSG\\ngtopb.cpp","tests":[{"id":1728186274644,"input":"8 3\n25 30 28 154 6 12 70 13\n","output":"2 4 7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\PROHSG\\ngtopb.cpp","group":"local","local":true}
