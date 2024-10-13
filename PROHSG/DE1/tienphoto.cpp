@@ -21,18 +21,63 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "tienphoto"
+
+ll l, m, n;
 
 void solve()
 {
-   string n;
-   cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   cin >> l >> m >> n;
+   if (l == 4)
    {
-      s += (n[i] - 48);
+      if (m == 1)
+      {
+         if (n < 100)
+         {
+            cout << n * 300;
+         }
+         else
+         {
+            cout << n * 250;
+         }
+      }
+      else
+      {
+         if (n < 100)
+         {
+            cout << n * 400;
+         }
+         else
+         {
+            cout << n * 350;
+         }
+      }
    }
-   cout << s;
+   else
+   {
+      if (m == 1)
+      {
+         if (n < 100)
+         {
+            cout << n * 600;
+         }
+         else
+         {
+            cout << n * 500;
+         }
+      }
+      else
+      {
+         if (n < 100)
+         {
+            cout << n * 800;
+         }
+         else
+         {
+            cout << n * 700;
+         }
+      }
+   }
 }
 
 int main()

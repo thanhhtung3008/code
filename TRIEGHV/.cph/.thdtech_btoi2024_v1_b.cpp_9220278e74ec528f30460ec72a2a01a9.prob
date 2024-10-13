@@ -1,0 +1,1 @@
+{"name":"Local: thdtech_btoi2024_v1_b","url":"d:\\code\\TRIEGHV\\thdtech_btoi2024_v1_b.cpp","tests":[{"id":1728477382683,"input":"ABCxxxxDExxxF\n","output":"ABCCCCCDEEEEF\n"},{"id":1728478273274,"input":"xAACCxxxDDDD","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\TRIEGHV\\thdtech_btoi2024_v1_b.cpp","group":"local","local":true}

@@ -21,16 +21,46 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "tong"
+
+string cong(string a, string b)
+{
+   while (a.size() < b.size())
+   {
+      a = "0" + a;
+   }
+   while (a.size() > b.size())
+   {
+      b = "0" + b;
+   }
+   string s = "";
+   ll nho = 0;
+   FORD(i, a.size() - 1, 0)
+   {
+      ll v1 = a[i] - 48;
+      ll v2 = b[i] - 48;
+      ll k = v1 + v2 + nho;
+      s = char(k % 10 + 48) + s;
+      nho = k / 10;
+   }
+   if (nho != 0)
+   {
+      s = "1" + s;
+   }
+   return s;
+}
 
 void solve()
 {
-   string n;
-   cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   string s;
+   FOR(i, 1, 4)
    {
-      s += (n[i] - 48);
+      string n;
+      cin >> n;
+      if ((n[n.size() - 1] - 48) % 2 == 0)
+      {
+         s = cong(s, n);
+      }
    }
    cout << s;
 }

@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_dua","url":"d:\\code\\thdvnoj\\thdbth_dua.cpp","tests":[{"id":1728798433895,"input":"9\n50 20 20 10 10 30 50 10 20\n","output":"3"},{"id":1728798765085,"input":"11","output":"11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_dua.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: tongs","url":"d:\\code\\DP-BS\\tongs.cpp","tests":[{"id":1728722845098,"input":"4 9\n2\n5\n3\n1\n","output":"1"},{"id":1728722924801,"input":"8 92\n69 16 82 170 31 24 45 112","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\DP-BS\\tongs.cpp","group":"local","local":true}

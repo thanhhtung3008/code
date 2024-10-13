@@ -21,18 +21,35 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "bosoi"
 
 void solve()
 {
-   string n;
-   cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   ll n, k, m;
+   cin >> n >> k >> m;
+   k--;
+   vll stone(n);
+   stone[0] = stone[1] = 1;
+   ll ans = stone[0] + stone[1];
+   FOR(i, 2, n - 1)
    {
-      s += (n[i] - 48);
+      stone[i] = ans;
+      ans += stone[i];
    }
-   cout << s;
+   while (k--)
+   {
+      vll stones(n);
+      stones[0] = stone[0] + 1;
+      stones[1] = stone[1] + 1;
+      ans = stones[0] + stones[1];
+      FOR(i, 2, n - 1)
+      {
+         stones[i] = ans + stone[i];
+         ans += stones[i];
+      }
+      stone = stones;
+   }
+   cout << stone[m - 1];
 }
 
 int main()

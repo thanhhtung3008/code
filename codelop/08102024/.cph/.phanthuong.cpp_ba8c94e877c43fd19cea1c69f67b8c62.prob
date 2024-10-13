@@ -1,0 +1,1 @@
+{"name":"Local: phanthuong","url":"d:\\code\\codelop\\08102024\\phanthuong.cpp","tests":[{"id":1728373267090,"input":"4 3\n1 8 1 1\n8 8 8 8\n2 8 8 8\n3 8 8 15","output":"79"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\codelop\\08102024\\phanthuong.cpp","group":"local","local":true}

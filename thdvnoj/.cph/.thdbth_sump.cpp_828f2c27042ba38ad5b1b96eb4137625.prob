@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_sump","url":"d:\\code\\thdvnoj\\thdbth_sump.cpp","tests":[{"id":1728797012152,"input":"4 2\n1 4 2 8\n1 3\n1 4\n\n","output":"7\n15"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_sump.cpp","group":"local","local":true}

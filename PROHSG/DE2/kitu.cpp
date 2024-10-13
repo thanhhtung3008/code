@@ -21,18 +21,21 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "kitu"
 
 void solve()
 {
-   string n;
-   cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   ll d = 0;
+   string s;
+   cin >> s;
+   FOR(i, 0, s.size() - 1)
    {
-      s += (n[i] - 48);
+      if (s[i] >= '0' && s[i] <= '9')
+      {
+         d++;
+      }
    }
-   cout << s;
+   cout << d;
 }
 
 int main()

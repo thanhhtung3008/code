@@ -1,5 +1,3 @@
-/* Author : Nguyen Thanh Tung - Tran Hung Dao High School for Gifted Student */
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -21,25 +19,42 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "Palinnum"
+
+ll tinh(ll n)
+{
+   ll s = 0;
+   while (n)
+   {
+      s = s * 10 + (n % 10);
+      n /= 10;
+   }
+   return s;
+}
 
 void solve()
 {
-   string n;
-   cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   ll k;
+   cin >> k;
+   for (ll i = 0; i <= maxn && k > 0; i++)
    {
-      s += (n[i] - 48);
+      if (tinh(i) == i)
+      {
+         k--;
+         cout << i << endl;
+      }
+      if (k == 0)
+      {
+         cout << i;
+      }
    }
-   cout << s;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

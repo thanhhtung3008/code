@@ -38,7 +38,6 @@ void magicFunc()
     for (auto i : a)
     {
         cout << i.ft << " " << i.sc << endl;
-        ;
     }
 }
 int main()

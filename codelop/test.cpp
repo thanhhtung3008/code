@@ -1,84 +1,62 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
-#define endl '\n'
-#define ft first
-#define sc second
 #define ll long long
-#define vll vector<ll>
-#define vp vector<pll>
-#define pll pair<ll, ll>
-#define ull unsigned long long
-#define FOR(i, l, r) for (ll i = (l); i <= (r); ++i)
-#define FORD(i, r, l) for (ll i = (r); i >= (l); --i)
-
-const long long maxn = 1e6 + 9;
-const long long N = 3e4 + 9;
-const long long oo = 1e18 + 9;
-const long long INF = 0x3f;
-const long long MOD = 1e9 + 7;
-
-#define TASK "code"
-
-ll exgcd(ll a, ll b, ll &x, ll &y)
+#define fi first
+#define se second
+const ll MAXN = 1e6 + 9;
+const int inf = 1e18 + 7;
+const int mod = 1e9 + 7;
+ll f[MAXN];
+ll n, m;
+bool pr[MAXN];
+void ktao2()
 {
-   if (b == 0)
+   memset(pr, true, sizeof(pr));
+   pr[1] = 0;
+   pr[0] = 0;
+   for (int i = 2; i <= sqrt(MAXN); i++)
    {
-      x = 1;
-      y = 0;
-      return a;
-   }
-   ll x1, y1;
-   ll d = exgcd(b, a % b, x1, y1);
-   x = y1;
-   y = x1 - (a / b) * y1;
-   return d;
-}
-
-void solve()
-{
-   ll a, b, m;
-   cin >> a >> b >> m;
-   ll s, t;
-   ll d = exgcd(abs(a), m, s, t);
-   if (b % d != 0)
-   {
-      cout << 0 << endl;
-      return;
-   }
-   if (a < 0)
-   {
-      s = -s;
-   }
-   ll x0 = (s * (b / d)) % m;
-   if (x0 < 0)
-   {
-      x0 += m;
-   }
-   vector<ll> p;
-   for (ll i = 0; i < d; i++)
-   {
-      ll x = (x0 + i * (m / d)) % m;
-      if (x < 0)
+      if (pr[i] == 1)
       {
-         x += m;
+         for (int j = i * i; j <= MAXN; j += i)
+         {
+            pr[j] = 0;
+         }
       }
-      p.push_back(x);
    }
-   cout << p.size() << endl;
-   sort(p.begin(), p.end());
-   for (ll i : p)
+}
+void ktao()
+{
+   for (int i = 1; i <= sqrt(MAXN); i++)
    {
-      cout << i << endl;
+      f[i * i] += 1;
+      for (int j = i + 1; j <= MAXN / i; j++)
+      {
+         f[i * j] += 2;
+      }
    }
 }
 
 int main()
 {
-   ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   // freopen(TASK ".inp", "r", stdin);
-   // freopen(TASK ".out", "w", stdout);
-   solve();
-   return 0;
+   ios_base::sync_with_stdio(false);
+   cin.tie(0);
+   cout.tie(0);
+   cin >> n >> m;
+   ll ans = 0;
+   ktao();
+   ktao2();
+   for (int i = 1; i <= n; i++)
+   {
+      for (int j = 1; j <= m; j++)
+      {
+         ll x;
+         cin >> x;
+         if (pr[f[x]])
+         {
+            ans++;
+         }
+      }
+   }
+   cout << ans;
 }

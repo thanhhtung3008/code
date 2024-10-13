@@ -1,0 +1,1 @@
+{"name":"Local: soluong","url":"d:\\code\\PROHSG\\DE2\\soluong.cpp","tests":[{"id":1728204806099,"input":"6\n2 3 2 4 2 3\n","output":"3"},{"id":1728204817631,"input":"5\n2 5 6 4 5\n","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\PROHSG\\DE2\\soluong.cpp","group":"local","local":true}

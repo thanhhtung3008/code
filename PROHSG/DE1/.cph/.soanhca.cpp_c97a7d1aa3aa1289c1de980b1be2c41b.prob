@@ -1,0 +1,1 @@
+{"name":"Local: soanhca","url":"d:\\code\\PROHSG\\DE1\\soanhca.cpp","tests":[{"id":1728187619072,"input":"216","output":"621"},{"id":1728187625634,"input":"10201","output":"21100"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\PROHSG\\DE1\\soanhca.cpp","group":"local","local":true}

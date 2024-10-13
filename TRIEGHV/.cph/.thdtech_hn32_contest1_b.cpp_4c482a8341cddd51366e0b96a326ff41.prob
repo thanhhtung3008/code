@@ -1,0 +1,1 @@
+{"name":"Local: thdtech_hn32_contest1_b","url":"d:\\code\\TRIEGHV\\thdtech_hn32_contest1_b.cpp","tests":[{"id":1728453643889,"input":"5 2\n1 2 3 4 5\n","output":"9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\TRIEGHV\\thdtech_hn32_contest1_b.cpp","group":"local","local":true}

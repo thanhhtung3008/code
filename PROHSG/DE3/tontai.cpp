@@ -21,25 +21,50 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "tontai"
+
+ll dem(ll a, ll n)
+{
+   ll d = 0;
+   FOR(i, 1, n)
+   {
+      ll l = n - i * i;
+      if (l < 0)
+      {
+         break;
+      }
+      d += min(n, (ll)sqrt(l));
+   }
+   return d;
+}
 
 void solve()
 {
-   string n;
-   cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   ll n = 10000;
+   ll k;
+   cin >> k;
+   ll l = 2, r = 2 * n * n, ans = 0;
+   while (l <= r)
    {
-      s += (n[i] - 48);
+      ll m = (l + r) / 2;
+      if (dem(m, n) >= k)
+      {
+         ans = m;
+         r = m - 1;
+      }
+      else
+      {
+         l = m + 1;
+      }
    }
-   cout << s;
+   cout << ans;
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

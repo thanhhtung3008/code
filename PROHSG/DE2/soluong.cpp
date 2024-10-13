@@ -21,18 +21,20 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "soluong"
 
 void solve()
 {
-   string n;
+   ll n;
    cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   unordered_set<ll> s;
+   FOR(i, 1, n)
    {
-      s += (n[i] - 48);
+      ll x;
+      cin >> x;
+      s.insert(x);
    }
-   cout << s;
+   cout << s.size();
 }
 
 int main()

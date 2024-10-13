@@ -1,0 +1,1 @@
+{"name":"Local: trieghv_sanguoc1","url":"d:\\code\\TRIEGHV\\trieghv_sanguoc1.cpp","tests":[{"id":1728468111298,"input":"5\n10\n7\n6\n2\n9\n","output":"4 18\n2 8\n4 12\n2 3\n3 13\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\TRIEGHV\\trieghv_sanguoc1.cpp","group":"local","local":true}

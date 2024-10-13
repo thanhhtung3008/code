@@ -1,0 +1,1 @@
+{"name":"Local: thdbth_counts","url":"d:\\code\\thdvnoj\\thdbth_counts.cpp","tests":[{"id":1728794047328,"input":"5\n1 2 3 4 5\n7","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\code\\thdvnoj\\thdbth_counts.cpp","group":"local","local":true}

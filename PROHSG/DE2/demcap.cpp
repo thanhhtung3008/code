@@ -21,18 +21,21 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "demcap"
 
 void solve()
 {
-   string n;
+   ll n;
    cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   ll d = 0;
+   FOR(i, 2, sqrt(n))
    {
-      s += (n[i] - 48);
+      if (n % i == 0)
+      {
+         d++;
+      }
    }
-   cout << s;
+   cout << d;
 }
 
 int main()

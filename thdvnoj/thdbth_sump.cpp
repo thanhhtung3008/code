@@ -21,25 +21,32 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "code"
+
+ll n, q, a[maxn];
 
 void solve()
 {
-   string n;
-   cin >> n;
-   ll s = 0;
-   FOR(i, 0, n.size() - 1)
+   cin >> n >> q;
+   FOR(i, 1, n)
    {
-      s += (n[i] - 48);
+      ll x;
+      cin >> x;
+      a[i] = a[i - 1] + x;
    }
-   cout << s;
+   while (q--)
+   {
+      ll l, r;
+      cin >> l >> r;
+      cout << a[r] - a[l - 1] << endl;
+   }
 }
 
 int main()
 {
    ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
-   freopen(TASK ".inp", "r", stdin);
-   freopen(TASK ".out", "w", stdout);
+   // freopen(TASK ".inp", "r", stdin);
+   // freopen(TASK ".out", "w", stdout);
    solve();
    return 0;
 }

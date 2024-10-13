@@ -21,18 +21,24 @@ const long long oo = 1e18 + 9;
 const long long INF = 0x3f;
 const long long MOD = 1e9 + 7;
 
-#define TASK "tongchuso"
+#define TASK "soanhca"
 
 void solve()
 {
    string n;
    cin >> n;
-   ll s = 0;
+   unordered_map<char, ll> m;
    FOR(i, 0, n.size() - 1)
    {
-      s += (n[i] - 48);
+      m[n[i]]++;
    }
-   cout << s;
+   FORD(i, 9, 0)
+   {
+      for (ll j = 1; j <= m[char(i + 48)]; j++)
+      {
+         cout << i;
+      }
+   }
 }
 
 int main()

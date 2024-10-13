@@ -25,30 +25,21 @@ const long long MOD = 1e9 + 7;
 
 void solve()
 {
-   ll l, r;
-   cin >> l >> r;
-   vll nt(r - l + 1, true);
-   for (ll i = 2; i * i <= r; i++)
+   ll t;
+   cin >> t;
+   while (t--)
    {
-      ll bd = max(i * i, (i + l - 1) / i * i);
-      for (ll j = bd; j <= r; j += i)
+      ll ans = 0;
+      ll k;
+      cin >> k;
+      FOR(i, 1, k / 2)
       {
-         nt[j - l] = false;
+         ll a = k - i;
+         ll x = a - i;
+         ans += x;
       }
+      cout << ans << endl;
    }
-   if (1 >= l)
-   {
-      nt[1 - l] = false;
-   }
-   ll ans = 0;
-   FOR(i, l, r)
-   {
-      if (nt[i - l])
-      {
-         ans++;
-      }
-   }
-   cout << ans;
 }
 
 int main()
@@ -59,4 +50,3 @@ int main()
    solve();
    return 0;
 }
-/// Stay calm, read the question slowly and understand the question, it is often simpler than you imagine
